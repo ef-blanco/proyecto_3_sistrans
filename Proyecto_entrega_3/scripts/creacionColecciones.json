@@ -1,0 +1,179 @@
+//------------------Creacion EPS-------------------------
+db.createCollection("EPS",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["nombre","direccion","telefono","IPSList","afiliados","citas"],
+            properties:{
+                nombre:{bsonType:"string"},
+                direccion:{bsonType:"string"},
+                telefono:{bsonType:"string",minLength:10},
+                IPSList:{bsonType:"array",items:{bsonType:"int"}},
+                afiliados:{bsonType:"array",items:{bsonType:"int"}},
+                citas:{bsonType:"array",items:{bsonType:"int"}}
+            }
+        }
+    }
+});
+
+//-----------------Cita---------------------------
+db.createCollection("Cita",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["fecha","hora","servicio","agendada","afiliado","medico","ips"],
+            properties:{
+                fecha:{bsonType:"string",minLength:10},
+                hora:{bsonType:"string",minLength:4},
+                servicio:{bsonType:"object",
+                          required:["nombre","tipo","descripcion"],
+                          properties:{
+                            nombre:{bsonType:"string"},
+                            tipo:{bsonType:"string"},
+                            descripcion:{bsonType:"string"}
+                          }},
+                agendada:{bsonType:"bool"},
+                afiliado:{bsonType:"object",
+                          required:["nombre","fechaNacimiento","identificacion","direccion","telefono","tipoAfiliado"],
+                          properties:{
+                            nombre:{bsonType:"string"},
+                            fechaNacimiento:{bsonType:"string",minLength:10},
+                            identificacion:{bsonType:"object",
+                                required:["tipoDocumento","numDocumento"],
+                                properties:{
+                                    tipoDocumento:{bsonType:"string",minLength:2},
+                                    numDocumento:{bsonType:"string",minLength:10}
+                                }},
+                            direccion:{bsonType:"string"},
+                            telefono:{bsonType:"string",minLength:10},
+                            tipoAfiliado:{bsonType:"string"},
+                            contribuyente:{bsonType:"int"},
+                            parentesco:{bsonType:"string"}
+                          }},
+                medico:{bsonType:"int"},
+                ips:{bsonType:"int"}
+            }
+        }
+    }
+});
+
+//---------------------Afiliado-------------------
+db.createCollection("Afiliado",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["nombre","fechaNacimiento","identificacion","direccion","telefono","tipoAfiliado"],
+            properties:{
+                nombre:{bsonType:"string"},
+                fechaNacimiento:{bsonType:"string",minLength:10},
+                identificacion:{bsonType:"object",
+                                required:["tipoDocumento","numDocumento"],
+                                properties:{
+                                    tipoDocumento:{bsonType:"string",minLength:2},
+                                    numDocumento:{bsonType:"string",minLength:10}
+                                }},
+                direccion:{bsonType:"string"},
+                telefono:{bsonType:"string",minLength:10},
+                tipoAfiliado:{bsonType:"string"},
+                contribuyente:{bsonType:"int"},
+                parentesco:{bsonType:"string"}
+
+            }
+        }
+    }
+});
+
+//------------------------------Servicio--------------------------
+db.createCollection("Servicio",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["nombre","tipo","descripcion"],
+            properties:{
+                nombre:{bsonType:"string"},
+                tipo:{bsonType:"string"},
+                descripcion:{bsonType:"string"}
+            }
+        }
+    }
+});
+
+//----------------Medico-----------------
+db.createCollection("Medico",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["nombre","identificacion","especialidad","registroMedico","servicios"],
+            properties:{
+                nombre:{bsonType:"string"},
+                identificacion:{bsonType:"object",
+                                required:["tipoDocumento","numDocumento"],
+                                properties:{
+                                    tipoDocumento:{bsonType:"string",minLength:2},
+                                    numDocumento:{bsonType:"string",minLength:10}
+                                }},
+                especialidad:{bsonType:"string"},
+                registroMedico:{bsonType:"string"},
+                servicios:{bsonType:"array",
+                           items:{bsonType:"int"}}
+            }
+        }
+    }
+});
+//-------------------------------IPS----------------------------
+db.createCollection("IPS",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["nombre","direccion","telefono","NIT","servicios","medicos","ordenesServ"],
+            properties:{
+                nombre:{bsonType:"string"},
+                direccion:{bsonType:"string"},
+                telefono:{bsonType:"string",minLength:10},
+                NIT:{bsonType:"string",minLength:9},
+                servicios:{bsonType:"array",items:{bsonType:"int"}},
+                medicos:{bsonType:"array",items:{bsonType:"int"}},
+                ordenesServ:{bsonType:"array",items:{bsonType:"int"}}
+            }
+        }
+    }
+});
+
+//------------------OrdenServicio----------------------
+db.createCollection("OrdenServicio",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["estado","fecha","afiliado","servicio","medico"],
+            properties:{
+                estado:{enum:["vigente","cancelada","completada"]},
+                fecha:{bsonType:"string"},
+                afiliado:{bsonType:"object",
+                          required:["nombre","fechaNacimiento","identificacion","direccion","telefono","tipoAfiliado"],
+                          properties:{
+                            nombre:{bsonType:"string"},
+                            fechaNacimiento:{bsonType:"string",minLength:10},
+                            identificacion:{bsonType:"object",
+                                required:["tipoDocumento","numDocumento"],
+                                properties:{
+                                    tipoDocumento:{bsonType:"string",minLength:2},
+                                    numDocumento:{bsonType:"string",minLength:10}
+                                }},
+                            direccion:{bsonType:"string"},
+                            telefono:{bsonType:"string",minLength:10},
+                            tipoAfiliado:{bsonType:"string"},
+                            contribuyente:{bsonType:"int"},
+                            parentesco:{bsonType:"string"}
+                          }},
+                servicio:{bsonType:"object",
+                          required:["nombre","tipo","descripcion"],
+                          properties:{
+                            nombre:{bsonType:"string"},
+                            tipo:{bsonType:"string"},
+                            descripcion:{bsonType:"string"}
+                          }},
+                medico:{bsonType:"int"}
+            }
+        }
+    }
+});
