@@ -15,9 +15,11 @@ public class Cita
     private Afiliado afiliado;
     private int medico;
     private int ips;
+    private int ordenAsociada;
 
-    public Cita(String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico,
-            int ips) {
+
+    public Cita(String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips,
+            int ordenAsociada) {
         this.fecha = fecha;
         this.hora = hora;
         this.servicio = servicio;
@@ -25,6 +27,7 @@ public class Cita
         this.afiliado = afiliado;
         this.medico = medico;
         this.ips = ips;
+        this.ordenAsociada = ordenAsociada;
     }
 
     public String getFecha() {
@@ -81,6 +84,14 @@ public class Cita
 
     public void setIps(int ips) {
         this.ips = ips;
+    }
+
+    public int getOrdenAsociada() {
+        return ordenAsociada;
+    }
+
+    public void setOrdenAsociada(int ordenAsociada) {
+        this.ordenAsociada = ordenAsociada;
     }
 
     
