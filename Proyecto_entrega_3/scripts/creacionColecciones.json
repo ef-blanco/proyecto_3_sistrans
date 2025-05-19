@@ -51,7 +51,8 @@ db.createCollection("Cita",{
                             parentesco:{bsonType:"string"}
                           }},
                 medico:{bsonType:"int"},
-                ips:{bsonType:"int"}
+                ips:{bsonType:"int"},
+                ordenAsociada:{bsonType:"int"}
             }
         }
     }
