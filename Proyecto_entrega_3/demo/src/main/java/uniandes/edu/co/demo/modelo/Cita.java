@@ -1,5 +1,87 @@
 package uniandes.edu.co.demo.modelo;
 
-public class Cita {
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.ToString;
+
+@Document(collection="Cita")
+@ToString
+public class Cita 
+{
+    private String fecha;
+    private String hora;
+    private Servicio servicio;
+    private boolean agendada;
+    private Afiliado afiliado;
+    private int medico;
+    private int ips;
+
+    public Cita(String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico,
+            int ips) {
+        this.fecha = fecha;
+        this.hora = hora;
+        this.servicio = servicio;
+        this.agendada = agendada;
+        this.afiliado = afiliado;
+        this.medico = medico;
+        this.ips = ips;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public Servicio getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
+    }
+
+    public boolean isAgendada() {
+        return agendada;
+    }
+
+    public void setAgendada(boolean agendada) {
+        this.agendada = agendada;
+    }
+
+    public Afiliado getAfiliado() {
+        return afiliado;
+    }
+
+    public void setAfiliado(Afiliado afiliado) {
+        this.afiliado = afiliado;
+    }
+
+    public int getMedico() {
+        return medico;
+    }
+
+    public void setMedico(int medico) {
+        this.medico = medico;
+    }
+
+    public int getIps() {
+        return ips;
+    }
+
+    public void setIps(int ips) {
+        this.ips = ips;
+    }
+
+    
 }
