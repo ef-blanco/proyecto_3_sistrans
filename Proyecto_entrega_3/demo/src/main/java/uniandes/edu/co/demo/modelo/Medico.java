@@ -13,7 +13,7 @@ public class Medico
     private String nombre;
     private Identificacion identificacion;
     private String especialidad;
-    private String registro;
+    private String registroMedico;
     private List<Integer> servicios;
     
     public Medico(String nombre, Identificacion identificacion, String especialidad, String registro,
@@ -21,7 +21,7 @@ public class Medico
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.especialidad = especialidad;
-        this.registro = registro;
+        this.registroMedico = registro;
         this.servicios = servicios;
     }
 
@@ -50,11 +50,11 @@ public class Medico
     }
 
     public String getRegistro() {
-        return registro;
+        return registroMedico;
     }
 
-    public void setRegistro(String registro) {
-        this.registro = registro;
+    public void setRegistro(String registroMedico) {
+        this.registroMedico = registroMedico;
     }
 
     public List<Integer> getServicios() {
