@@ -2,6 +2,7 @@ package uniandes.edu.co.demo.modelo;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.ToString;
@@ -10,6 +11,8 @@ import lombok.ToString;
 @ToString
 public class Medico 
 {
+    @Id
+    private int id;
     private String nombre;
     private Identificacion identificacion;
     private String especialidad;

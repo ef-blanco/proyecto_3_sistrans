@@ -2,6 +2,7 @@ package uniandes.edu.co.demo.modelo;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.ToString;
@@ -10,6 +11,8 @@ import lombok.ToString;
 @ToString
 public class EPS 
 {
+    @Id
+    private int id;
     private String nombre;
     private String direccion;
     private String telefono;
@@ -17,12 +20,12 @@ public class EPS
     private List<Integer> afiliados;
     private List<Integer> citas;
 
-    public EPS(String nombre, String direccion, String telefono, List<Integer> iPSList, List<Integer> afiliados,
+    public EPS(String nombre, String direccion, String telefono, List<Integer> IPSList, List<Integer> afiliados,
             List<Integer> citas) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        IPSList = iPSList;
+        this.IPSList = IPSList;
         this.afiliados = afiliados;
         this.citas = citas;
     }
