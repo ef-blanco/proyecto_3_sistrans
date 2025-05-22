@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "fb77df4b-3987-4a37-83e4-112e89d49477",
+		"name": "Afiliado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41409337"
+	},
+	"item": [
+		{
+			"name": "Crear Afiliado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Felipe Blanco\",\r\n    \"fechaNacimiento\":\"28-04-2004\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0806141211\"\r\n    },\r\n    \"direccion\":\"Calle #-#\",\r\n    \"telefono\":\"1234567890\",\r\n    \"tipoAfiliado\":\"contribuyente\",\r\n    \"contribuyente\":null,\r\n    \"parentesco\":\"null\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/afiliados/new/save",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"afiliados",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los Afiliados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/afiliados",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"afiliados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un afiliado por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/afiliados/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"afiliados",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un Afiliado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Felipe Blanco\",\r\n    \"fechaNacimiento\":\"28-04-2004\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0806141211\"\r\n    },\r\n    \"direccion\":\"Calle #-#\",\r\n    \"telefono\":\"0987653434\",\r\n    \"tipoAfiliado\":\"contribuyente\",\r\n    \"contribuyente\":null,\r\n    \"parentesco\":\"null\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/afiliados/{{id}}/edit/save",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"afiliados",
+						"{{id}}",
+						"edit",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un afiliado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/afiliados/{{id}}/delete",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"afiliados",
+						"{{id}}",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

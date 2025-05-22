@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "67e23f58-d187-4c3c-86c5-7e985cf5fc15",
+		"name": "Cita",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41409337"
+	},
+	"item": [
+		{
+			"name": "Crear Cita",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\":\"21-05-2025\",\r\n    \"hora\":\"19:59\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Un servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\"descripcion descripcion\"\r\n    },\r\n    \"agendada\":true,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Un nombre\",\r\n        \"fechaNacimiento\":\"20-08-2005\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0987654321\"\r\n        },\r\n        \"direccion\":\"una direccion\",\r\n        \"telefono\":\"0909090909\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":12,\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":13,\r\n    \"ips\":40,\r\n    \"ordenAsociada\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/citas/new/save",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las citas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/citas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una cita por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/citas/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar una cita",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\":\"21-05-2025\",\r\n    \"hora\":\"13:30\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Otro servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\"descripcion descripcion\"\r\n    },\r\n    \"agendada\":true,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Un nombre\",\r\n        \"fechaNacimiento\":\"20-08-2005\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0987654321\"\r\n        },\r\n        \"direccion\":\"una direccion\",\r\n        \"telefono\":\"0909090909\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":12,\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":13,\r\n    \"ips\":40,\r\n    \"ordenAsociada\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/citas/{{id}}/edit/save",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas",
+						"{{id}}",
+						"edit",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar cita",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/citas/{{id}}/delete",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas",
+						"{{id}}",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
