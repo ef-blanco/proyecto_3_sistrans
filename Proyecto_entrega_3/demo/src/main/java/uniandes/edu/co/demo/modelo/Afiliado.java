@@ -10,7 +10,7 @@ import lombok.ToString;
 public class Afiliado 
 {
     @Id
-    private int id;
+    private String id;
     private String nombre;
     private String fechaNacimiento;
     private Identificacion identificacion;
@@ -20,7 +20,7 @@ public class Afiliado
     private int contribuyente; //TODO: Revisar su implementación
     private String parentesco; //TODO: Revisar su implementación
 
-    public Afiliado(int id, String nombre, String fechaNacimiento, Identificacion identificacion, String direccion,
+    public Afiliado(String id, String nombre, String fechaNacimiento, Identificacion identificacion, String direccion,
             String telefono, String tipoAfiliado, int contribuyente, String parentesco) {
         this.id = id;
         this.nombre = nombre;
@@ -33,11 +33,11 @@ public class Afiliado
         this.parentesco = parentesco;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

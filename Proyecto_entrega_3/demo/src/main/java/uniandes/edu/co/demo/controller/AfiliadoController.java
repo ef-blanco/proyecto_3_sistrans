@@ -52,7 +52,7 @@ public class AfiliadoController
 
     //Obtener un afiliado por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<Afiliado>> obtenerAfiliadoPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<Afiliado>> obtenerAfiliadoPorId(@PathVariable("id") String id)
     {
         try{
             List<Afiliado> afiliados = afiliadoRepository.buscarAfiliadoPorId(id);
@@ -72,7 +72,7 @@ public class AfiliadoController
 
     //UPDATE
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarAfiliado(@PathVariable("id") int id,@RequestBody Afiliado afiliado)
+    public ResponseEntity<String> actualizarAfiliado(@PathVariable("id") String id,@RequestBody Afiliado afiliado)
     {
         try{
             afiliadoRepository.actualizarAfiliado(id,
@@ -93,7 +93,7 @@ public class AfiliadoController
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarAfiliado(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarAfiliado(@PathVariable("id") String id)
     {
         try{
             afiliadoRepository.eliminarAfiliado(id);
