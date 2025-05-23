@@ -10,7 +10,7 @@ import uniandes.edu.co.demo.modelo.Afiliado;
 import uniandes.edu.co.demo.modelo.OrdenServicio;
 import uniandes.edu.co.demo.modelo.Servicio;
 
-public interface OrdenServicioRepository extends MongoRepository<OrdenServicio,Integer>
+public interface OrdenServicioRepository extends MongoRepository<OrdenServicio,String>
 {
     //CREATE
     default void insertarOrdenServicio(OrdenServicio ordenServicio)
@@ -23,14 +23,14 @@ public interface OrdenServicioRepository extends MongoRepository<OrdenServicio,I
     List<OrdenServicio> buscarTodasOrdenServicio();
 
     @Query("{_id:?0}")
-    List<OrdenServicio> buscarOrdenServicioPorId(int id);
+    List<OrdenServicio> buscarOrdenServicioPorId(String id);
 
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{estado:?1,fecha:?2,afiliado:?3,servicio:?4,medico:?5}}")
-    void actualizarOrdenServicio(int id,String estado,String fecha,Afiliado afiliado,Servicio servicio, int medico);
+    void actualizarOrdenServicio(String id,String estado,String fecha,Afiliado afiliado,Servicio servicio, int medico);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
-    void eliminarOrdenServicio(int id);
+    void eliminarOrdenServicio(String id);
 }

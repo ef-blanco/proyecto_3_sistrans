@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Medico 
 {
     @Id
-    private int id;
+    private String id;
     private String nombre;
     private Identificacion identificacion;
     private String especialidad;

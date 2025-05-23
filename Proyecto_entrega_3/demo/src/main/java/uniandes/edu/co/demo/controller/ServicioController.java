@@ -51,7 +51,7 @@ public class ServicioController
 
     //Obtener un servicio por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<Servicio>> obtenerServicioPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<Servicio>> obtenerServicioPorId(@PathVariable("id") String id)
     {
         try{
             List<Servicio> servicios = servicioRepository.buscarServicioPorId(id);
@@ -69,7 +69,7 @@ public class ServicioController
 
     //UPDATE
     @PostMapping("{id}/edit/save")
-    public ResponseEntity<String> actualizarServicio(@PathVariable("id") int id, @RequestBody Servicio servicio)
+    public ResponseEntity<String> actualizarServicio(@PathVariable("id") String id, @RequestBody Servicio servicio)
     {
         try{
             servicioRepository.actualizarServicio(
@@ -85,7 +85,7 @@ public class ServicioController
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarServicio(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarServicio(@PathVariable("id") String id)
     {
         try{
             servicioRepository.eliminarServicio(id);

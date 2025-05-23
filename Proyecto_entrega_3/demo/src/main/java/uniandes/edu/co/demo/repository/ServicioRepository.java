@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.Update;
 
 import uniandes.edu.co.demo.modelo.Servicio;
 
-public interface ServicioRepository extends MongoRepository<Servicio,Integer>
+public interface ServicioRepository extends MongoRepository<Servicio,String>
 {
     //CREATE
     default void insertarServicio(Servicio servicio)
@@ -21,14 +21,14 @@ public interface ServicioRepository extends MongoRepository<Servicio,Integer>
     List<Servicio> buscarTodosServicio();
 
     @Query("{_id:?0}")
-    List<Servicio> buscarServicioPorId(int id);
+    List<Servicio> buscarServicioPorId(String id);
 
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{nombre:?1,tipo:?2,descripcion:?3}}")
-    void actualizarServicio(int id, String nombre, String tipo, String descripcion);
+    void actualizarServicio(String id, String nombre, String tipo, String descripcion);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
-    void eliminarServicio(int id);
+    void eliminarServicio(String id);
 }

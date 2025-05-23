@@ -51,7 +51,7 @@ public class IPSController
 
     //Obtener una IPS por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<IPS>> obtenerIPSPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<IPS>> obtenerIPSPorId(@PathVariable("id") String id)
     {
         try{
             List<IPS> ipsList = ipsRepository.buscarIPSPorId(id);
@@ -69,7 +69,7 @@ public class IPSController
 
     //UPDATE
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarIPS(@PathVariable("id") int id, @RequestBody IPS ips)
+    public ResponseEntity<String> actualizarIPS(@PathVariable("id") String id, @RequestBody IPS ips)
     {
         try{
             ipsRepository.actualizarIPS(id,
@@ -88,7 +88,7 @@ public class IPSController
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarIPS(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarIPS(@PathVariable("id") String id)
     {
         try{
             ipsRepository.eliminarIPS(id);

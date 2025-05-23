@@ -10,7 +10,7 @@ import lombok.ToString;
 public class Servicio 
 {
     @Id
-    private int id;
+    private String id;
     private String nombre;
     private String tipo;
     private String descripcion;

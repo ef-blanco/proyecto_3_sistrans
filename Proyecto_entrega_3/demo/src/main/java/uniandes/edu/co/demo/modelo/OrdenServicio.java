@@ -10,7 +10,7 @@ import lombok.ToString;
 public class OrdenServicio 
 {
     @Id
-    private int id;
+    private String id;
     private String estado;
     private String fecha;
     private Afiliado afiliado;

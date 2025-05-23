@@ -51,7 +51,7 @@ public class OrdenServicioController
 
     //Obtener una OrdenServicio por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<OrdenServicio>> obtenerOrdenServicioPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<OrdenServicio>> obtenerOrdenServicioPorId(@PathVariable("id") String id)
     {
         try{
             List<OrdenServicio> ordenes = ordenServicioRepository.buscarOrdenServicioPorId(id);
@@ -69,7 +69,7 @@ public class OrdenServicioController
 
     //UPDATE
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarOrdenServicio(@PathVariable("id") int id,@RequestBody OrdenServicio ordenServicio)
+    public ResponseEntity<String> actualizarOrdenServicio(@PathVariable("id") String id,@RequestBody OrdenServicio ordenServicio)
     {
         try{
             ordenServicioRepository.actualizarOrdenServicio(id,
@@ -86,7 +86,7 @@ public class OrdenServicioController
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarOrdenServicio(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarOrdenServicio(@PathVariable("id") String id)
     {
         try{
             ordenServicioRepository.eliminarOrdenServicio(id);

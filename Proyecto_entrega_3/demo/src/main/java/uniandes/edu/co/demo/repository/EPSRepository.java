@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.Update;
 
 import uniandes.edu.co.demo.modelo.EPS;
 
-public interface EPSRepository extends MongoRepository<EPS,Integer>
+public interface EPSRepository extends MongoRepository<EPS,String>
 {
     //CREATE
     default void insertarEPS(EPS eps)
@@ -21,14 +21,14 @@ public interface EPSRepository extends MongoRepository<EPS,Integer>
     List<EPS> buscarTodasEPS();
 
     @Query("{_id:?0}")
-    List<EPS> buscarEPSPorId(int id);
+    List<EPS> buscarEPSPorId(String id);
 
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{nombre:?1,direccion:?2,telefono:?3,IPSList:?4,afiliados:?5,citas:?6}}")
-    void actuaizarEPS(int id, String nombre, String direccion, String telefono, List<Integer> IPSList, List<Integer> afiliados, List<Integer> citas);
+    void actuaizarEPS(String id, String nombre, String direccion, String telefono, List<Integer> IPSList, List<Integer> afiliados, List<Integer> citas);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
-    void eliminarEPS(int id);
+    void eliminarEPS(String id);
 }

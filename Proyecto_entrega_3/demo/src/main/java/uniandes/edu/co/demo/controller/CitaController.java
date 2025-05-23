@@ -51,7 +51,7 @@ public class CitaController {
 
     //Obtener un cita por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<Cita>> obtenerCitaPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<Cita>> obtenerCitaPorId(@PathVariable("id") String id)
     {
         try{
             List<Cita> citas = citaRepository.buscarCitaPorId(id);
@@ -69,7 +69,7 @@ public class CitaController {
 
     //UPDATE
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarCita(@PathVariable("id") int id, @RequestBody Cita cita)
+    public ResponseEntity<String> actualizarCita(@PathVariable("id") String id, @RequestBody Cita cita)
     {
         try{
             citaRepository.actualizarCita(id,
@@ -90,7 +90,7 @@ public class CitaController {
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarCita(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarCita(@PathVariable("id") String id)
     {
         try{
             citaRepository.eliminarCita(id);

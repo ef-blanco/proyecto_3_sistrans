@@ -10,7 +10,7 @@ import uniandes.edu.co.demo.modelo.Afiliado;
 import uniandes.edu.co.demo.modelo.Cita;
 import uniandes.edu.co.demo.modelo.Servicio;
 
-public interface CitaRepository extends MongoRepository<Cita,Integer>
+public interface CitaRepository extends MongoRepository<Cita,String>
 {
     //CREATE
     default void insertarCita(Cita cita)
@@ -23,14 +23,14 @@ public interface CitaRepository extends MongoRepository<Cita,Integer>
     List<Cita> buscarTodasCitas();
 
     @Query("{_id:?0}")
-    List<Cita> buscarCitaPorId(int id);
+    List<Cita> buscarCitaPorId(String id);
 
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{fecha:?1,hora:?2,servicio:?3,agendada:?4,afiliado:?5,medico:?6,ips:?7,ordenAsociada:?8}}")
-    void actualizarCita(int id, String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips, int ordenAsociada);
+    void actualizarCita(String id, String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips, int ordenAsociada);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
-    void eliminarCita(int id);
+    void eliminarCita(String id);
 }

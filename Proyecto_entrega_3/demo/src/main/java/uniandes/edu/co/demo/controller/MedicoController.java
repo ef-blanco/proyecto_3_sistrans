@@ -51,7 +51,7 @@ public class MedicoController
 
     //Obtener un medico por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<Medico>> obtenerMedicoPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<Medico>> obtenerMedicoPorId(@PathVariable("id") String id)
     {
         try{
             List<Medico> medicos = medicoRepository.buscarMedicoPorId(id);
@@ -70,7 +70,7 @@ public class MedicoController
 
     //UPDATE
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarMedico(@PathVariable("id") int id, @RequestBody Medico medico)
+    public ResponseEntity<String> actualizarMedico(@PathVariable("id") String id, @RequestBody Medico medico)
     {
         try{
             medicoRepository.actualizarMedico(id,
@@ -87,7 +87,7 @@ public class MedicoController
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarMedico(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarMedico(@PathVariable("id") String id)
     {
         try{
             medicoRepository.eliminarMedico(id);

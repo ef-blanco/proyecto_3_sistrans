@@ -10,7 +10,7 @@ import lombok.ToString;
 public class Cita 
 {
     @Id
-    private int id;
+    private String id;
     private String fecha;
     private String hora;
     private Servicio servicio;

@@ -51,7 +51,7 @@ public class EPSController
 
     //Obtener una EPS por ID
     @GetMapping("/{id}")
-    public ResponseEntity<List<EPS>> obtenerEPSPorId(@PathVariable("id") int id)
+    public ResponseEntity<List<EPS>> obtenerEPSPorId(@PathVariable("id") String id)
     {
         try{
             List<EPS> epslist = epsRepository.buscarEPSPorId(id);
@@ -69,7 +69,7 @@ public class EPSController
 
     //UPDATE
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarEPS(@PathVariable("id") int id, @RequestBody EPS eps)
+    public ResponseEntity<String> actualizarEPS(@PathVariable("id") String id, @RequestBody EPS eps)
     {
         try{
             epsRepository.actuaizarEPS(id,
@@ -87,7 +87,7 @@ public class EPSController
 
     //DELETE
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<String> eliminarEPS(@PathVariable("id") int id)
+    public ResponseEntity<String> eliminarEPS(@PathVariable("id") String id)
     {
         try{
             epsRepository.eliminarEPS(id);

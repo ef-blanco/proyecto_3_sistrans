@@ -12,7 +12,7 @@ import lombok.ToString;
 public class IPS 
 {
     @Id
-    private int id;
+    private String id;
     private String nombre;
     private String direccion;
     private String telefono;
