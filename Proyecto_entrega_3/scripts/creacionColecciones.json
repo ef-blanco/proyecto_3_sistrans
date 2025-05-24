@@ -8,9 +8,9 @@ db.createCollection("EPS",{
                 nombre:{bsonType:"string"},
                 direccion:{bsonType:"string"},
                 telefono:{bsonType:"string",minLength:10},
-                IPSList:{bsonType:"array",items:{bsonType:"objectId"}},
-                afiliados:{bsonType:"array",items:{bsonType:"objectId"}},
-                citas:{bsonType:"array",items:{bsonType:"objectId"}}
+                IPSList:{bsonType:"array",items:{bsonType:"string"}},
+                afiliados:{bsonType:"array",items:{bsonType:"string"}},
+                citas:{bsonType:"array",items:{bsonType:"string"}}
             }
         }
     }
@@ -46,12 +46,12 @@ db.createCollection("Cita",{
                             direccion:{bsonType:"string"},
                             telefono:{bsonType:"string",minLength:10},
                             tipoAfiliado:{bsonType:"string"},
-                            contribuyente:{bsonType:"objectId"},
+                            contribuyente:{bsonType:"string"},
                             parentesco:{bsonType:"string"}
                           }},
-                medico:{bsonType:"objectId"},
-                ips:{bsonType:"objectId"},
-                ordenAsociada:{bsonType:"objectId"}
+                medico:{bsonType:"string"},
+                ips:{bsonType:"string"},
+                ordenAsociada:{bsonType:"string"}
             }
         }
     }
@@ -75,7 +75,7 @@ db.createCollection("Afiliado",{
                 direccion:{bsonType:"string"},
                 telefono:{bsonType:"string",minLength:10},
                 tipoAfiliado:{bsonType:"string"},
-                contribuyente:{bsonType:"objectId"},
+                contribuyente:{bsonType:"string"},
                 parentesco:{bsonType:"string"}
 
             }
@@ -115,7 +115,7 @@ db.createCollection("Medico",{
                 especialidad:{bsonType:"string"},
                 registroMedico:{bsonType:"string"},
                 servicios:{bsonType:"array",
-                           items:{bsonType:"objectId"}}
+                           items:{bsonType:"string"}}
             }
         }
     }
@@ -131,9 +131,9 @@ db.createCollection("IPS",{
                 direccion:{bsonType:"string"},
                 telefono:{bsonType:"string",minLength:10},
                 NIT:{bsonType:"string",minLength:9},
-                servicios:{bsonType:"array",items:{bsonType:"objectId"}},
-                medicos:{bsonType:"array",items:{bsonType:"objectId"}},
-                ordenesServ:{bsonType:"array",items:{bsonType:"objectId"}}
+                servicios:{bsonType:"array",items:{bsonType:"string"}},
+                medicos:{bsonType:"array",items:{bsonType:"string"}},
+                ordenesServ:{bsonType:"array",items:{bsonType:"string"}}
             }
         }
     }
@@ -162,7 +162,7 @@ db.createCollection("OrdenServicio",{
                             direccion:{bsonType:"string"},
                             telefono:{bsonType:"string",minLength:10},
                             tipoAfiliado:{bsonType:"string"},
-                            contribuyente:{bsonType:"objectId"},
+                            contribuyente:{bsonType:"string"},
                             parentesco:{bsonType:"string"}
                           }},
                 servicio:{bsonType:"object",
@@ -172,7 +172,7 @@ db.createCollection("OrdenServicio",{
                             tipo:{bsonType:"string"},
                             descripcion:{bsonType:"string"}
                           }},
-                medico:{bsonType:"objectId"}
+                medico:{bsonType:"string"}
             }
         }
     }
