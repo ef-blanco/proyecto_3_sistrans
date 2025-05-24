@@ -21,10 +21,9 @@ db.createCollection("Cita",{
     validator:{
         $jsonSchema:{
             bsonType:"object",
-            required:["fecha","hora","servicio","agendada","afiliado","medico","ips"],
+            required:["fecha","servicio","agendada","afiliado","medico","ips"],
             properties:{
                 fecha:{bsonType:"date"},
-                hora:{bsonType:"string",minLength:4},
                 servicio:{bsonType:"object",
                           required:["nombre","tipo","descripcion"],
                           properties:{
