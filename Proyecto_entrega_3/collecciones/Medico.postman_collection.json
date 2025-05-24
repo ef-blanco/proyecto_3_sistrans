@@ -1,19 +1,19 @@
 {
 	"info": {
-		"_postman_id": "acb0a276-dab2-4aa0-9c94-aedab8b8447f",
-		"name": "EPS",
+		"_postman_id": "e514f181-8a61-4f3f-a315-7ccd694529c1",
+		"name": "Medico",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41409337"
 	},
 	"item": [
 		{
-			"name": "Crear EPS",
+			"name": "Crear Medico",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Salud##\",\r\n    \"direccion\":\"Dir-##-##\",\r\n    \"telefono\":\"3434565678\",\r\n    \"IPSList\":[\"12dij93jd\",\"343fj93f\"],\r\n    \"afiliados\":[\"553j39j\",\"563j9r3j\",\"5749fj94fj\",\"584fj49fj\",\"5993fj9fj\"],\r\n    \"citas\":[\"112dj9dj\",\"45dj93\"]\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Un medico\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0998876756\"\r\n    },\r\n    \"especialidad\":\"Una especialidad\",\r\n    \"registroMedico\":\"RM123\",\r\n    \"servicios\":[\"16h3b6\",\"57fi1b6\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,12 +21,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/eps/new/save",
+					"raw": "{{baseUrl}}/medicos/new/save",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"eps",
+						"medicos",
 						"new",
 						"save"
 					]
@@ -35,34 +35,34 @@
 			"response": []
 		},
 		{
-			"name": "Obtener todas las EPS",
+			"name": "Obtener todos los Medicos",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/eps",
+					"raw": "{{baseUrl}}/medicos",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"eps"
+						"medicos"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Obtener EPS por Id",
+			"name": "Obtener Medico por Id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/eps/{{id}}",
+					"raw": "{{baseUrl}}/medicos/{{id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"eps",
+						"medicos",
 						"{{id}}"
 					]
 				}
@@ -70,13 +70,13 @@
 			"response": []
 		},
 		{
-			"name": "Actualizar EPS",
+			"name": "Actualizar Medico",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Salud##\",\r\n    \"direccion\":\"Dir-##-##\",\r\n    \"telefono\":\"3434598980\",\r\n    \"IPSList\":[\"12dij93jd\",\"343fj93f\"],\r\n    \"afiliados\":[\"553j39j\",\"563j9r3j\",\"5749fj94fj\",\"584fj49fj\"],\r\n    \"citas\":[\"112dj9dj\",\"45dj93\",\"8u2e92j3\",\"deji29djdj\"]\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Un nuevo medico\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"1234566543\"\r\n    },\r\n    \"especialidad\":\"Otra especialidad\",\r\n    \"registroMedico\":\"RM123\",\r\n    \"servicios\":[\"16h3b6\",\"57fi1b6\",\"anb37rg3n\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -84,12 +84,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/eps/{{id}}/edit/save",
+					"raw": "{{baseUrl}}/medicos/{{id}}/edit/save",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"eps",
+						"medicos",
 						"{{id}}",
 						"edit",
 						"save"
@@ -99,17 +99,17 @@
 			"response": []
 		},
 		{
-			"name": "Eliminar EPS",
+			"name": "Eliminar un Medico",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/eps/{{id}}/delete",
+					"raw": "{{baseUrl}}/medicos/{{id}}/delete",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"eps",
+						"medicos",
 						"{{id}}",
 						"delete"
 					]

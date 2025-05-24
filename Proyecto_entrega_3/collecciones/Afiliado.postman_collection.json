@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Felipe Blanco\",\r\n    \"fechaNacimiento\":\"28-04-2004\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0806141211\"\r\n    },\r\n    \"direccion\":\"Calle #-#\",\r\n    \"telefono\":\"1234567890\",\r\n    \"tipoAfiliado\":\"contribuyente\",\r\n    \"contribuyente\":null,\r\n    \"parentesco\":\"null\"\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Felipe Blanco\",\r\n    \"fechaNacimiento\":\"28-04-2004\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0806141211\"\r\n    },\r\n    \"direccion\":\"Calle #-#\",\r\n    \"telefono\":\"1234567890\",\r\n    \"tipoAfiliado\":\"beneficiario\",\r\n    \"contribuyente\":\"n2ni3i43n\",\r\n    \"parentesco\":\"familiar\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -76,7 +76,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Felipe Blanco\",\r\n    \"fechaNacimiento\":\"28-04-2004\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0806141211\"\r\n    },\r\n    \"direccion\":\"Calle #-#\",\r\n    \"telefono\":\"0987653434\",\r\n    \"tipoAfiliado\":\"contribuyente\",\r\n    \"contribuyente\":null,\r\n    \"parentesco\":\"null\"\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Felipe Javier Blanco\",\r\n    \"fechaNacimiento\":\"28-04-2004\",\r\n    \"identificacion\":{\r\n        \"tipoDocumento\":\"CC\",\r\n        \"numDocumento\":\"0806141211\"\r\n    },\r\n    \"direccion\":\"Calle #-#\",\r\n    \"telefono\":\"0987653434\",\r\n    \"tipoAfiliado\":\"beneficiario\",\r\n    \"contribuyente\":\"18n48fn49j9\",\r\n    \"parentesco\":\"Padrastro\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

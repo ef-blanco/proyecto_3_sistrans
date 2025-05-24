@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"fecha\":\"21-05-2025\",\r\n    \"hora\":\"19:59\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Un servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\"descripcion descripcion\"\r\n    },\r\n    \"agendada\":true,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Un nombre\",\r\n        \"fechaNacimiento\":\"20-08-2005\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0987654321\"\r\n        },\r\n        \"direccion\":\"una direccion\",\r\n        \"telefono\":\"0909090909\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":12,\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":13,\r\n    \"ips\":40,\r\n    \"ordenAsociada\":10\r\n}",
+					"raw": "{\r\n    \"fecha\":\"2025-06-27T19:59:00\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Un servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\"descripcion descripcion\"\r\n    },\r\n    \"agendada\":false,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Un nombre\",\r\n        \"fechaNacimiento\":\"20-08-2005\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0987654321\"\r\n        },\r\n        \"direccion\":\"una direccion\",\r\n        \"telefono\":\"0909090909\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":\"664fa1e67fd9c643db23c7e0\",\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":\"664f96c113b8d7083a066b28\",\r\n    \"ips\":\"664fa1ef7fd9c643db23c7e1\",\r\n    \"ordenAsociada\":\"664fa2357fd9c643db23c7e6\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -76,7 +76,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"fecha\":\"21-05-2025\",\r\n    \"hora\":\"13:30\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Otro servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\"descripcion descripcion\"\r\n    },\r\n    \"agendada\":true,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Un nombre\",\r\n        \"fechaNacimiento\":\"20-08-2005\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0987654321\"\r\n        },\r\n        \"direccion\":\"una direccion\",\r\n        \"telefono\":\"0909090909\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":12,\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":13,\r\n    \"ips\":40,\r\n    \"ordenAsociada\":10\r\n}",
+					"raw": "{\r\n    \"fecha\":\"2025-06-12T15:30:00\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Otro servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\" Nueva descripcion descripcion\"\r\n    },\r\n    \"agendada\":false,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Un nombre\",\r\n        \"fechaNacimiento\":\"20-08-2005\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0987654321\"\r\n        },\r\n        \"direccion\":\"una direccion\",\r\n        \"telefono\":\"0909090909\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":\"4j4f9j49j4fn9\",\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":\"2ey8f494jfn9\",\r\n    \"ips\":\"4f8h4f854j\",\r\n    \"ordenAsociada\":\"48hf48nf4fn\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

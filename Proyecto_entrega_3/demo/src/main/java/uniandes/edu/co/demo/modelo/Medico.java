@@ -19,12 +19,12 @@ public class Medico
     private String registroMedico;
     private List<String> servicios;
     
-    public Medico(String nombre, Identificacion identificacion, String especialidad, String registro,
+    public Medico(String nombre, Identificacion identificacion, String especialidad, String registroMedico,
             List<String> servicios) {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.especialidad = especialidad;
-        this.registroMedico = registro;
+        this.registroMedico = registroMedico;
         this.servicios = servicios;
     }
 
