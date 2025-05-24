@@ -7,6 +7,7 @@ db.Cita.aggregate([
         $gte: ISODate("2025-06-01T00:00:00Z"),
         $lte: ISODate("2025-06-24T23:59:59Z")
       },
+      "servicio.nombre":"Un servicio",
       medico: { $regex: "^[a-fA-F0-9]{24}$" },
       ips: { $regex: "^[a-fA-F0-9]{24}$" }
     }
