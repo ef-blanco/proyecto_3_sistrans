@@ -74,7 +74,6 @@ public class CitaController {
         try{
             citaRepository.actualizarCita(id,
             cita.getFecha(),
-            cita.getHora(),
             cita.getServicio(),
             cita.isAgendada(),
             cita.getAfiliado(),

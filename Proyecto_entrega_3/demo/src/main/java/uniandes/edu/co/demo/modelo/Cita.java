@@ -14,7 +14,6 @@ public class Cita
     @Id
     private String id;
     private Date fecha;
-    private String hora;
     private Servicio servicio;
     private boolean agendada;
     private Afiliado afiliado;
@@ -23,10 +22,9 @@ public class Cita
     private int ordenAsociada;
 
 
-    public Cita(Date fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips,
+    public Cita(Date fecha, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips,
             int ordenAsociada) {
         this.fecha = fecha;
-        this.hora = hora;
         this.servicio = servicio;
         this.agendada = agendada;
         this.afiliado = afiliado;
@@ -41,14 +39,6 @@ public class Cita
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
     }
 
     public Servicio getServicio() {

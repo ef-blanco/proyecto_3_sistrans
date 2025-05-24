@@ -28,10 +28,15 @@ public interface CitaRepository extends MongoRepository<Cita,String>
 
     //UPDATE
     @Query("{_id:?0}")
-    @Update("{$set:{fecha:?1,hora:?2,servicio:?3,agendada:?4,afiliado:?5,medico:?6,ips:?7,ordenAsociada:?8}}")
-    void actualizarCita(String id, Date fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips, int ordenAsociada);
+    @Update("{$set:{fecha:?1,servicio:?2,agendada:?3,afiliado:?4,medico:?5,ips:?6,ordenAsociada:?7}}")
+    void actualizarCita(String id, Date fecha, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips, int ordenAsociada);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
     void eliminarCita(String id);
+
+
+    //Consulta del RFC1
+    @Query(value = "{}")
+    List<Cita> disponibilidadEnSiguientes4Semanas(int idServicio, Date fechaInicio, Date fechaFin);
 }
