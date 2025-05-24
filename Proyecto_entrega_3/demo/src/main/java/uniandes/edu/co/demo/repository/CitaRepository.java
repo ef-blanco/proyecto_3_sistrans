@@ -1,5 +1,6 @@
 package uniandes.edu.co.demo.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -28,7 +29,7 @@ public interface CitaRepository extends MongoRepository<Cita,String>
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{fecha:?1,hora:?2,servicio:?3,agendada:?4,afiliado:?5,medico:?6,ips:?7,ordenAsociada:?8}}")
-    void actualizarCita(String id, String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips, int ordenAsociada);
+    void actualizarCita(String id, Date fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips, int ordenAsociada);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)

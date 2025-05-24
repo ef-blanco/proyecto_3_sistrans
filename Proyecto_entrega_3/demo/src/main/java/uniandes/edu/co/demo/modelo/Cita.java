@@ -1,5 +1,7 @@
 package uniandes.edu.co.demo.modelo;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +13,7 @@ public class Cita
 {
     @Id
     private String id;
-    private String fecha;
+    private Date fecha;
     private String hora;
     private Servicio servicio;
     private boolean agendada;
@@ -21,7 +23,7 @@ public class Cita
     private int ordenAsociada;
 
 
-    public Cita(String fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips,
+    public Cita(Date fecha, String hora, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips,
             int ordenAsociada) {
         this.fecha = fecha;
         this.hora = hora;
@@ -33,11 +35,11 @@ public class Cita
         this.ordenAsociada = ordenAsociada;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

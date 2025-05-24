@@ -23,7 +23,7 @@ db.createCollection("Cita",{
             bsonType:"object",
             required:["fecha","hora","servicio","agendada","afiliado","medico","ips"],
             properties:{
-                fecha:{bsonType:"string",minLength:10},
+                fecha:{bsonType:"date"},
                 hora:{bsonType:"string",minLength:4},
                 servicio:{bsonType:"object",
                           required:["nombre","tipo","descripcion"],
