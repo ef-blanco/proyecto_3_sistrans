@@ -1,23 +1,65 @@
-//RFC1
+//-----------------------------------RFC1--------------------------------------------------
 db.Cita.aggregate([
   {
     $match: {
       agendada: false,
       fecha: {
-        $gte: ISODate("2025-05-01T00:00:00Z"),
-        $lte: ISODate("2025-05-31T23:59:59Z")
-      }
+        $gte: ISODate("2025-06-01T00:00:00Z"),
+        $lte: ISODate("2025-06-24T23:59:59Z")
+      },
+      medico: { $regex: "^[a-fA-F0-9]{24}$" },
+      ips: { $regex: "^[a-fA-F0-9]{24}$" }
+    }
+  },
+  {
+    $addFields: {
+      medicoObjectId: { $toObjectId: "$medico" },
+      ipsObjectId: { $toObjectId: "$ips" }
     }
   },
   {
     $lookup: {
-      from: "Medico",         
-      localField: "medico",   
-      foreignField: "_id", 
+      from: "Medico",
+      localField: "medicoObjectId",
+      foreignField: "_id",
       as: "medico_info"
     }
   },
   {
-    $unwind: "$medico_info"  
+    $unwind: "$medico_info"
+  },
+  {
+    $lookup: {
+      from: "IPS", 
+      localField: "ipsObjectId",
+      foreignField: "_id",
+      as: "ips_info"
+    }
+  },
+  {
+    $unwind: "$ips_info"
+  },
+  {
+    $sort: {fecha:1}
+  },
+  {
+    $project: {
+      _id: 0,
+      fecha: {
+      $dateToString: {
+        format: "%Y-%m-%d",
+        date: "$fecha",
+      }
+    },
+    hora: {
+      $dateToString: {
+        format: "%H:%M:%S",
+        date: "$fecha",
+      }
+    },
+      nombreServicio: "$servicio.nombre",
+      nombreMedico: "$medico_info.nombre",
+      nombreIPS: "$ips_info.nombre"
+    }
   }
 ])

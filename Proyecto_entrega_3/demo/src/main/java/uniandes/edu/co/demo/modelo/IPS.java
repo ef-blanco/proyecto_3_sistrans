@@ -21,12 +21,12 @@ public class IPS
     private List<String> medicos;
     private List<String> ordenesServ;
     
-    public IPS(String nombre, String direccion, String telefono, String nIT, List<String> servicios,
+    public IPS(String nombre, String direccion, String telefono, String NIT, List<String> servicios,
             List<String> medicos, List<String> ordenesServ) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        NIT = nIT;
+        this.NIT = NIT;
         this.servicios = servicios;
         this.medicos = medicos;
         this.ordenesServ = ordenesServ;
@@ -57,11 +57,11 @@ public class IPS
     }
 
     public String getNIT() {
-        return NIT;
+        return this.NIT;
     }
 
-    public void setNIT(String nIT) {
-        NIT = nIT;
+    public void setNIT(String NIT) {
+        this.NIT = NIT;
     }
 
     public List<String> getServicios() {
