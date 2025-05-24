@@ -38,5 +38,5 @@ public interface CitaRepository extends MongoRepository<Cita,String>
 
     //Consulta del RFC1
     @Query(value = "{}")
-    List<Cita> disponibilidadEnSiguientes4Semanas(int idServicio, Date fechaInicio, Date fechaFin);
+    List<Cita> disponibilidadEnSiguientes4Semanas(String idServicio, Date fechaInicio, Date fechaFin);
 }

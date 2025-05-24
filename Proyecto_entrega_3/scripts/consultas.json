@@ -1,0 +1,23 @@
+//RFC1
+db.Cita.aggregate([
+  {
+    $match: {
+      agendada: false,
+      fecha: {
+        $gte: ISODate("2025-05-01T00:00:00Z"),
+        $lte: ISODate("2025-05-31T23:59:59Z")
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "Medico",         
+      localField: "medico",   
+      foreignField: "_id", 
+      as: "medico_info"
+    }
+  },
+  {
+    $unwind: "$medico_info"  
+  }
+])
