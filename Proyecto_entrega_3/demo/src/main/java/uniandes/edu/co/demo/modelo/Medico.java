@@ -17,10 +17,10 @@ public class Medico
     private Identificacion identificacion;
     private String especialidad;
     private String registroMedico;
-    private List<Integer> servicios;
+    private List<String> servicios;
     
     public Medico(String nombre, Identificacion identificacion, String especialidad, String registro,
-            List<Integer> servicios) {
+            List<String> servicios) {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.especialidad = especialidad;
@@ -60,11 +60,11 @@ public class Medico
         this.registroMedico = registroMedico;
     }
 
-    public List<Integer> getServicios() {
+    public List<String> getServicios() {
         return servicios;
     }
 
-    public void setServicios(List<Integer> servicios) {
+    public void setServicios(List<String> servicios) {
         this.servicios = servicios;
     }
 

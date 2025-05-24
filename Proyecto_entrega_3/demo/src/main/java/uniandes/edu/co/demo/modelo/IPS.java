@@ -17,12 +17,12 @@ public class IPS
     private String direccion;
     private String telefono;
     private String NIT;
-    private List<Integer> servicios;
-    private List<Integer> medicos;
-    private List<Integer> ordenesServ;
+    private List<String> servicios;
+    private List<String> medicos;
+    private List<String> ordenesServ;
     
-    public IPS(String nombre, String direccion, String telefono, String nIT, List<Integer> servicios,
-            List<Integer> medicos, List<Integer> ordenesServ) {
+    public IPS(String nombre, String direccion, String telefono, String nIT, List<String> servicios,
+            List<String> medicos, List<String> ordenesServ) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -64,27 +64,27 @@ public class IPS
         NIT = nIT;
     }
 
-    public List<Integer> getServicios() {
+    public List<String> getServicios() {
         return servicios;
     }
 
-    public void setServicios(List<Integer> servicios) {
+    public void setServicios(List<String> servicios) {
         this.servicios = servicios;
     }
 
-    public List<Integer> getMedicos() {
+    public List<String> getMedicos() {
         return medicos;
     }
 
-    public void setMedicos(List<Integer> medicos) {
+    public void setMedicos(List<String> medicos) {
         this.medicos = medicos;
     }
 
-    public List<Integer> getOrdenesServ() {
+    public List<String> getOrdenesServ() {
         return ordenesServ;
     }
 
-    public void setOrdenesServ(List<Integer> ordenesServ) {
+    public void setOrdenesServ(List<String> ordenesServ) {
         this.ordenesServ = ordenesServ;
     }
 

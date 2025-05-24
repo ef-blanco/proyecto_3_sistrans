@@ -26,7 +26,7 @@ public interface EPSRepository extends MongoRepository<EPS,String>
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{nombre:?1,direccion:?2,telefono:?3,IPSList:?4,afiliados:?5,citas:?6}}")
-    void actuaizarEPS(String id, String nombre, String direccion, String telefono, List<Integer> IPSList, List<Integer> afiliados, List<Integer> citas);
+    void actuaizarEPS(String id, String nombre, String direccion, String telefono, List<String> IPSList, List<String> afiliados, List<String> citas);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)

@@ -17,11 +17,11 @@ public class Afiliado
     private String direccion;
     private String telefono;
     private String tipoAfiliado;
-    private int contribuyente; //TODO: Revisar su implementación
-    private String parentesco; //TODO: Revisar su implementación
+    private String contribuyente; 
+    private String parentesco;
 
     public Afiliado(String id, String nombre, String fechaNacimiento, Identificacion identificacion, String direccion,
-            String telefono, String tipoAfiliado, int contribuyente, String parentesco) {
+            String telefono, String tipoAfiliado, String contribuyente, String parentesco) {
         this.id = id;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -89,11 +89,11 @@ public class Afiliado
         this.tipoAfiliado = tipoAfiliado;
     }
 
-    public int getContribuyente() {
+    public String getContribuyente() {
         return contribuyente;
     }
 
-    public void setContribuyente(int contribuyente) {
+    public void setContribuyente(String contribuyente) {
         this.contribuyente = contribuyente;
     }
 

@@ -28,7 +28,7 @@ public interface OrdenServicioRepository extends MongoRepository<OrdenServicio,S
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{estado:?1,fecha:?2,afiliado:?3,servicio:?4,medico:?5}}")
-    void actualizarOrdenServicio(String id,String estado,String fecha,Afiliado afiliado,Servicio servicio, int medico);
+    void actualizarOrdenServicio(String id,String estado,String fecha,Afiliado afiliado,Servicio servicio, String medico);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)

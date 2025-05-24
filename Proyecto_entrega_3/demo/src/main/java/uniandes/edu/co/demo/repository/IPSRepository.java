@@ -26,7 +26,7 @@ public interface IPSRepository extends MongoRepository<IPS,String>
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set: {nombre:?1,direccion:?2,telefono:?3,NIT:?4,servicios:?5,medicos:?6,ordenesServ:?7}}")
-    void actualizarIPS(String id, String nombre, String direccion, String telefono, String NIT, List<Integer> servicios, List<Integer> medicos, List<Integer> ordenesServ);
+    void actualizarIPS(String id, String nombre, String direccion, String telefono, String NIT, List<String> servicios, List<String> medicos, List<String> ordenesServ);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)

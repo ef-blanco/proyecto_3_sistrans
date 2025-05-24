@@ -15,9 +15,9 @@ public class OrdenServicio
     private String fecha;
     private Afiliado afiliado;
     private Servicio servicio;
-    private int medico;
+    private String medico;
     
-    public OrdenServicio(String estado, String fecha, Afiliado afiliado, Servicio servicio, int medico) {
+    public OrdenServicio(String estado, String fecha, Afiliado afiliado, Servicio servicio, String medico) {
         this.estado = estado;
         this.fecha = fecha;
         this.afiliado = afiliado;
@@ -48,10 +48,10 @@ public class OrdenServicio
     public void setServicio(Servicio servicio) {
         this.servicio = servicio;
     }
-    public int getMedico() {
+    public String getMedico() {
         return medico;
     }
-    public void setMedico(int medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
 

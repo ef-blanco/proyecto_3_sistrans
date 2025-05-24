@@ -27,7 +27,7 @@ public interface MedicoRepository extends MongoRepository<Medico,String>
     //UPDATE
     @Query("{_id:?0}")
     @Update("{$set:{nombre:?1,identificacion:?2,especialidad:?3,registroMedico:?4,servicios:?5}}")
-    void actualizarMedico(String id,String nombre,Identificacion identificacion,String especialidad, String registroMedico, List<Integer> servicios);
+    void actualizarMedico(String id,String nombre,Identificacion identificacion,String especialidad, String registroMedico, List<String> servicios);
 
     //DELETE
     @Query(value = "{_id:?0}", delete = true)

@@ -17,13 +17,13 @@ public class Cita
     private Servicio servicio;
     private boolean agendada;
     private Afiliado afiliado;
-    private int medico;
-    private int ips;
-    private int ordenAsociada;
+    private String medico;
+    private String ips;
+    private String ordenAsociada;
 
 
-    public Cita(Date fecha, Servicio servicio, boolean agendada, Afiliado afiliado, int medico, int ips,
-            int ordenAsociada) {
+    public Cita(Date fecha, Servicio servicio, boolean agendada, Afiliado afiliado, String medico, String ips,
+            String ordenAsociada) {
         this.fecha = fecha;
         this.servicio = servicio;
         this.agendada = agendada;
@@ -65,27 +65,27 @@ public class Cita
         this.afiliado = afiliado;
     }
 
-    public int getMedico() {
+    public String getMedico() {
         return medico;
     }
 
-    public void setMedico(int medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
 
-    public int getIps() {
+    public String getIps() {
         return ips;
     }
 
-    public void setIps(int ips) {
+    public void setIps(String ips) {
         this.ips = ips;
     }
 
-    public int getOrdenAsociada() {
+    public String getOrdenAsociada() {
         return ordenAsociada;
     }
 
-    public void setOrdenAsociada(int ordenAsociada) {
+    public void setOrdenAsociada(String ordenAsociada) {
         this.ordenAsociada = ordenAsociada;
     }
 

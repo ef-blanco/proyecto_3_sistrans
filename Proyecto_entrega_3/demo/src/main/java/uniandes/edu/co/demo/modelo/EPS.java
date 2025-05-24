@@ -16,12 +16,12 @@ public class EPS
     private String nombre;
     private String direccion;
     private String telefono;
-    private List<Integer> IPSList;
-    private List<Integer> afiliados;
-    private List<Integer> citas;
+    private List<String> IPSList;
+    private List<String> afiliados;
+    private List<String> citas;
 
-    public EPS(String nombre, String direccion, String telefono, List<Integer> IPSList, List<Integer> afiliados,
-            List<Integer> citas) {
+    public EPS(String nombre, String direccion, String telefono, List<String> IPSList, List<String> afiliados,
+            List<String> citas) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -54,27 +54,27 @@ public class EPS
         this.telefono = telefono;
     }
 
-    public List<Integer> getIPSList() {
+    public List<String> getIPSList() {
         return IPSList;
     }
 
-    public void setIPSList(List<Integer> iPSList) {
+    public void setIPSList(List<String> iPSList) {
         IPSList = iPSList;
     }
 
-    public List<Integer> getAfiliados() {
+    public List<String> getAfiliados() {
         return afiliados;
     }
 
-    public void setAfiliados(List<Integer> afiliados) {
+    public void setAfiliados(List<String> afiliados) {
         this.afiliados = afiliados;
     }
 
-    public List<Integer> getCitas() {
+    public List<String> getCitas() {
         return citas;
     }
 
-    public void setCitas(List<Integer> citas) {
+    public void setCitas(List<String> citas) {
         this.citas = citas;
     }
     
