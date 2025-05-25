@@ -1,7 +1,12 @@
 package uniandes.edu.co.demo.controller;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.demo.modelo.Cita;
 import uniandes.edu.co.demo.repository.CitaRepository;
+import uniandes.edu.co.demo.repository.CitaRepositoryCustom;
 
 @RestController
 @RequestMapping("/citas")
@@ -96,6 +102,25 @@ public class CitaController {
             return new ResponseEntity<>("cita eliminada exitosamente",HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("Error al eliminar la cita: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //---------------RFC1------------------
+    @Autowired 
+    private CitaRepositoryCustom citaRepositoryCustom;
+
+    @GetMapping("/RFC1")
+    public ResponseEntity<List<Document>> obtenerDisponibilidadSig4Semanas(String nombreServicio, Date fechaInicio)
+    {
+        try{
+            LocalDateTime fechaInit = Instant.ofEpochMilli(fechaInicio.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
+            LocalDateTime fechaEnd = fechaInit.plusWeeks(4);
+            Date fechaFin = Date.from(fechaEnd.atZone(ZoneId.systemDefault()).toInstant());
+            List<Document> resultado = citaRepositoryCustom.obtenerDisponibilidadSig4Semanas(nombreServicio, fechaInicio, fechaFin);
+            return ResponseEntity.ok(resultado);
+        }catch(Exception e){
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 
