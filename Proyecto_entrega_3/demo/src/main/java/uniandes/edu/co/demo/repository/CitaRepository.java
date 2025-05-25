@@ -34,4 +34,13 @@ public interface CitaRepository extends MongoRepository<Cita,String>
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
     void eliminarCita(String id);
+
+    //Nuevos UPDATE para el RF7
+    @Query("{_id:?0}")
+    @Update("{$set:{agendada:?1,afiliado:?2}}")
+    void agendarCitaSinOrden(String id, boolean agendada, Afiliado afiliado);
+
+    @Query("{_id:?0}")
+    @Update("{$set:{agendada:?1,afiliado:?2,ordenAsociada:?3}}")
+    void agendarCitaConOrden(String id, boolean agendada, Afiliado afiliado, String ordenAsociada);
 }

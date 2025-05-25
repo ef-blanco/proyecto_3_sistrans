@@ -144,6 +144,34 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Agendar Cita",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\":\"2025-06-31T12:30:00\",\r\n    \"servicio\":{\r\n        \"nombre\":\"Un servicio\",\r\n        \"tipo\":\"Un tipo\",\r\n        \"descripcion\":\"descripcion descripcion\"\r\n    },\r\n    \"agendada\":true,\r\n    \"afiliado\":{\r\n        \"nombre\":\"Felipe Blanco\",\r\n        \"fechaNacimiento\":\"28-04-2004\",\r\n        \"identificacion\":{\r\n            \"tipoDocumento\":\"CC\",\r\n            \"numDocumento\":\"0806141211\"\r\n        },\r\n        \"direccion\":\"Calle #-#\",\r\n        \"telefono\":\"1234567890\",\r\n        \"tipoAfiliado\":\"beneficiario\",\r\n        \"contribuyente\":\"664fa1e67fd9c643db23c7e0\",\r\n        \"parentesco\":\"familiar\"\r\n    },\r\n    \"medico\":\"68324d53eb7ee614f3806732\",\r\n    \"ips\":\"683255320a00f846d0ba71c8\",\r\n    \"ordenAsociada\":\"null\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/citas/{{id}}/agendar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas",
+						"{{id}}",
+						"agendar"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

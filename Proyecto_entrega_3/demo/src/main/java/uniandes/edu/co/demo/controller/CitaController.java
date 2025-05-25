@@ -126,4 +126,23 @@ public class CitaController {
         }
     }
 
+    //-----------------------RF7--------------------
+    @PostMapping("/{id}/agendar")
+    public ResponseEntity<String> agendarCita(@PathVariable("id") String id, @RequestBody Cita cita)
+    {
+        try{
+            if((!cita.getOrdenAsociada().equals("null"))||(!cita.getOrdenAsociada().isEmpty()))
+            {
+                citaRepository.agendarCitaConOrden(id,true,cita.getAfiliado(),cita.getOrdenAsociada());
+                return new ResponseEntity<>("Cita agendada exitosamente",HttpStatus.OK);
+            }
+            else{
+                citaRepository.agendarCitaSinOrden(id,true,cita.getAfiliado());
+                return new ResponseEntity<>("Cita agendada exitosamente",HttpStatus.OK);
+            }
+        }catch (Exception e){
+            return new ResponseEntity<>("Error al agendar la cita: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
