@@ -34,9 +34,4 @@ public interface CitaRepository extends MongoRepository<Cita,String>
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
     void eliminarCita(String id);
-
-
-    //Consulta del RFC1
-    @Query(value = "{}")
-    List<Cita> disponibilidadEnSiguientes4Semanas(String nombreServicio, Date fechaInicio, Date fechaFin);
 }
