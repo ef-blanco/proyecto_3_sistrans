@@ -62,5 +62,17 @@ public class CitaRepositoryCustom
 
     return mongoTemplate.getCollection("Cita").aggregate(pipeline).into(new java.util.ArrayList<>());
 }
+    // Nuevo método para resolver RFC2 - Top 20 servicios más solicitados
+    public List<Document> topServiciosMasSolicitados() 
+    {
+        List<Document> pipeline = List.of(
+            new Document("$group", new Document("_id", "$servicio.nombre")
+                .append("cantidad", new Document("$sum", 1))
+            ),
+            new Document("$sort", new Document("cantidad", -1)),
+            new Document("$limit", 20)
+        );
 
+        return mongoTemplate.getCollection("Cita").aggregate(pipeline).into(new java.util.ArrayList<>());
+    }
 }
