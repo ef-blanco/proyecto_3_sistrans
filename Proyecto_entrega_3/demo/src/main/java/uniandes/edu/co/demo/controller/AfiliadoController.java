@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.demo.modelo.Afiliado;
+import uniandes.edu.co.demo.modelo.EPS;
 import uniandes.edu.co.demo.repository.AfiliadoRepository;
 
 @RestController
@@ -100,6 +101,24 @@ public class AfiliadoController
             return new ResponseEntity<>("afiliado eliminado exitosamente",HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("Error al eliminar el afiliado: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //-----------------------RF_5--------------------
+    @PostMapping()
+    public ResponseEntity<String> registrarAfiliado(@RequestBody String id, EPS eps) {
+        try {
+            List<String> listaAfiliados = eps.getAfiliados();
+            for (String afiliadoId : listaAfiliados) {
+                if(afiliadoId.equals(id)) {
+                    return new ResponseEntity<>("El afiliado ya está registrado en la EPS", HttpStatus.CONFLICT);
+                }
+            }
+            listaAfiliados.add(id);
+            eps.setAfiliados(listaAfiliados);
+            return new ResponseEntity<>("Afiliado registrado exitosamente", HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al registrar el afiliado: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
