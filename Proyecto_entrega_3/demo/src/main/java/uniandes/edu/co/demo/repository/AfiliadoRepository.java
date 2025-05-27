@@ -32,5 +32,4 @@ public interface AfiliadoRepository extends MongoRepository<Afiliado,String>
     //DELETE
     @Query(value = "{_id:?0}", delete = true)
     void eliminarAfiliado(String id);
-
 }
