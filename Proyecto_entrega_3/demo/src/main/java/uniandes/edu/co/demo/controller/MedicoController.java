@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import uniandes.edu.co.demo.modelo.IPS;
 import uniandes.edu.co.demo.modelo.Medico;
 import uniandes.edu.co.demo.repository.MedicoRepository;
 
@@ -94,6 +95,24 @@ public class MedicoController
             return new ResponseEntity<>("medico eliminado exitosamente",HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("Error al eliminar el medico: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //-----------------------RF_4--------------------
+    @PostMapping()
+    public ResponseEntity<String> registrarMedico(@RequestBody String id, IPS ips) {
+        try {
+            List<String> listaMedicos = ips.getMedicos();
+            for (String medicoId : listaMedicos) {
+                if(medicoId.equals(id)) {
+                    return new ResponseEntity<>("El médico ya está registrado en la IPS", HttpStatus.CONFLICT);
+                }
+            }
+            listaMedicos.add(id);
+            ips.setMedicos(listaMedicos);
+            return new ResponseEntity<>("Médico registrado exitosamente", HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al registrar el médico: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
