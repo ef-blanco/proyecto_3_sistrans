@@ -17,9 +17,6 @@ public class OrdenServicio {
 
     private String medico;
 
-    // Constructor vacío
-    public OrdenServicio() {}
-
     // Constructor con parámetros (opcional)
     public OrdenServicio(String estado, String fecha, Afiliado afiliado, Servicio servicio, String medico) {
         this.estado = estado;
