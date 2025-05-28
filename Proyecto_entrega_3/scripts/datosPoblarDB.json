@@ -1,0 +1,811 @@
+//---------------SERVICIO------------------------
+[
+  {
+    // _id: "srv1"
+    "nombre": "Consulta General",
+    "tipo": "Consulta",
+    "descripcion": "Revisión médica general"
+  },
+  {
+    // _id: "srv2"
+    "nombre": "Laboratorio Clínico",
+    "tipo": "Diagnóstico",
+    "descripcion": "Exámenes de sangre y orina"
+  },
+  {
+    // _id: "srv3"
+    "nombre": "Radiología",
+    "tipo": "Diagnóstico",
+    "descripcion": "Rayos X y resonancias"
+  },
+  {
+    // _id: "srv4"
+    "nombre": "Pediatría",
+    "tipo": "Consulta",
+    "descripcion": "Atención médica infantil"
+  },
+  {
+    // _id: "srv5"
+    "nombre": "Odontología",
+    "tipo": "Especializada",
+    "descripcion": "Tratamientos dentales"
+  },
+  {
+    // _id: "srv6"
+    "nombre": "Oftalmología",
+    "tipo": "Especializada",
+    "descripcion": "Cuidado de la vista"
+  },
+  {
+    // _id: "srv7"
+    "nombre": "Cardiología",
+    "tipo": "Especializada",
+    "descripcion": "Tratamientos del corazón"
+  },
+  {
+    // _id: "srv8"
+    "nombre": "Psicología",
+    "tipo": "Consulta",
+    "descripcion": "Terapia psicológica"
+  },
+  {
+    // _id: "srv9"
+    "nombre": "Ginecología",
+    "tipo": "Especializada",
+    "descripcion": "Salud reproductiva femenina"
+  },
+  {
+    // _id: "srv10"
+    "nombre": "Dermatología",
+    "tipo": "Especializada",
+    "descripcion": "Tratamiento de la piel"
+  }
+]
+
+//--------------------AFILIADO-----------------------
+[
+  {
+    // _id: "af1"
+    "nombre": "Luis Pérez",
+    "fechaNacimiento": "1990-04-12",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "1234567890"},
+    "direccion": "Calle 123 #45-67",
+    "telefono": "3001234567",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af2"
+    "nombre": "Ana Gómez",
+    "fechaNacimiento": "1985-06-20",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "2345678901"},
+    "direccion": "Carrera 10 #20-30",
+    "telefono": "3102345678",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af3"
+    "nombre": "Carlos López",
+    "fechaNacimiento": "2000-01-01",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "3456789012"},
+    "direccion": "Diagonal 45 #33-20",
+    "telefono": "3113456789",
+    "tipoAfiliado": "Beneficiario",
+    "contribuyente": "68363a9bef8fb5ab337adc86",
+    "parentesco": "Hijo"
+  },
+  {
+    // _id: "af4"
+    "nombre": "Laura Méndez",
+    "fechaNacimiento": "2010-08-15",
+    "identificacion": {"tipoDocumento": "TI", "numDocumento": "4567890123"},
+    "direccion": "Transversal 30 #15-40",
+    "telefono": "3124567890",
+    "tipoAfiliado": "Beneficiario",
+    "contribuyente": "68363a9bef8fb5ab337adc87",
+    "parentesco": "Hija"
+  },
+  {
+    // _id: "af5"
+    "nombre": "Jorge Díaz",
+    "fechaNacimiento": "1975-09-10",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "5678901234"},
+    "direccion": "Calle 60 #70-80",
+    "telefono": "3135678901",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af6"
+    "nombre": "Marta Ruiz",
+    "fechaNacimiento": "1992-03-05",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "6789012345"},
+    "direccion": "Carrera 45 #22-33",
+    "telefono": "3146789012",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af7"
+    "nombre": "Diego Torres",
+    "fechaNacimiento": "1988-11-25",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "7890123456"},
+    "direccion": "Avenida 68 #40-50",
+    "telefono": "3157890123",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af8"
+    "nombre": "Camila Ríos",
+    "fechaNacimiento": "1999-02-14",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "8901234567"},
+    "direccion": "Calle 90 #100-110",
+    "telefono": "3168901234",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af9"
+    "nombre": "Juan Martínez",
+    "fechaNacimiento": "1980-07-30",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "9012345678"},
+    "direccion": "Carrera 5 #6-7",
+    "telefono": "3179012345",
+    "tipoAfiliado": "Contribuyente"
+  },
+  {
+    // _id: "af10"
+    "nombre": "Paola Herrera",
+    "fechaNacimiento": "1995-12-01",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "0123456789"},
+    "direccion": "Diagonal 80 #50-60",
+    "telefono": "3180123456",
+    "tipoAfiliado": "Contribuyente"
+  }
+]
+
+//-----------------MEDICO----------------
+[
+  {
+    // _id: "med1"
+    "nombre": "Dra. Sandra Jiménez",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "1111111111"},
+    "especialidad": "Medicina General",
+    "registroMedico": "RM001",
+    "servicios": ["68363a1fef8fb5ab337adc7c", "68363a1fef8fb5ab337adc7f"]
+  },
+  {
+    // _id: "med2"
+    "nombre": "Dr. Andrés Mora",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "2222222222"},
+    "especialidad": "Pediatría",
+    "registroMedico": "RM002",
+    "servicios": ["68363a1fef8fb5ab337adc7f"]
+  },
+  {
+    // _id: "med3"
+    "nombre": "Dr. Carlos Ruiz",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "3333333333"},
+    "especialidad": "Radiología",
+    "registroMedico": "RM003",
+    "servicios": ["68363a1fef8fb5ab337adc7e"]
+  },
+  {
+    // _id: "med4"
+    "nombre": "Dra. Julia Mendoza",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "4444444444"},
+    "especialidad": "Odontología",
+    "registroMedico": "RM004",
+    "servicios": ["68363a1fef8fb5ab337adc80"]
+  },
+  {
+    // _id: "med5"
+    "nombre": "Dr. Felipe Torres",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "5555555555"},
+    "especialidad": "Cardiología",
+    "registroMedico": "RM005",
+    "servicios": ["68363a1fef8fb5ab337adc82"]
+  },
+  {
+    // _id: "med6"
+    "nombre": "Dra. Natalia Pérez",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "6666666666"},
+    "especialidad": "Ginecología",
+    "registroMedico": "RM006",
+    "servicios": ["68363a1fef8fb5ab337adc84"]
+  },
+  {
+    // _id: "med7"
+    "nombre": "Dr. Miguel Díaz",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "7777777777"},
+    "especialidad": "Psicología",
+    "registroMedico": "RM007",
+    "servicios": ["68363a1fef8fb5ab337adc83"]
+  },
+  {
+    // _id: "med8"
+    "nombre": "Dra. Clara Rivas",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "8888888888"},
+    "especialidad": "Dermatología",
+    "registroMedico": "RM008",
+    "servicios": ["68363a1fef8fb5ab337adc85"]
+  },
+  {
+    // _id: "med9"
+    "nombre": "Dr. Iván Salazar",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "9999999999"},
+    "especialidad": "Oftalmología",
+    "registroMedico": "RM009",
+    "servicios": ["68363a1fef8fb5ab337adc81"]
+  },
+  {
+    // _id: "med10"
+    "nombre": "Dra. Eliana Romero",
+    "identificacion": {"tipoDocumento": "CC", "numDocumento": "1010101010"},
+    "especialidad": "Laboratorio Clínico",
+    "registroMedico": "RM010",
+    "servicios": ["68363a1fef8fb5ab337adc7d"]
+  }
+]
+
+
+//---------OrdenServicio--------------
+[
+  {
+    // _id: "ord1"
+    "estado": "vigente",
+    "fecha": "2024-05-01",
+    "afiliado": {
+      "nombre": "Carlos López",
+      "fechaNacimiento": "2000-01-01",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "3456789012"},
+      "direccion": "Diagonal 45 #33-20",
+      "telefono": "3113456789",
+      "tipoAfiliado": "Beneficiario",
+      "contribuyente": "68363a9bef8fb5ab337adc86",
+      "parentesco": "Hijo"
+    },
+    "servicio": {"nombre": "Pediatría", "tipo": "Consulta", "descripcion": "Atención médica infantil"},
+    "medico": "68363c4fef8fb5ab337adc91"
+  },
+  {
+    // _id: "ord2"
+    "estado": "completada",
+    "fecha": "2024-05-02",
+    "afiliado": {
+      "nombre": "Laura Méndez",
+      "fechaNacimiento": "2010-08-15",
+      "identificacion": {"tipoDocumento": "TI", "numDocumento": "4567890123"},
+      "direccion": "Transversal 30 #15-40",
+      "telefono": "3124567890",
+      "tipoAfiliado": "Beneficiario",
+      "contribuyente": "68363a9bef8fb5ab337adc87",
+      "parentesco": "Hija"
+    },
+    "servicio": {"nombre": "Odontología", "tipo": "Especializada", "descripcion": "Tratamientos dentales"},
+    "medico": "68363c4fef8fb5ab337adc93"
+  },
+  {
+    // _id: "ord3"
+    "estado": "vigente",
+    "fecha": "2024-05-03",
+    "afiliado": {
+      "nombre": "Luis Pérez",
+      "fechaNacimiento": "1990-04-12",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "1234567890"},
+      "direccion": "Calle 123 #45-67",
+      "telefono": "3001234567",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Radiología", "tipo": "Diagnóstico", "descripcion": "Rayos X y resonancias"},
+    "medico": "68363c4fef8fb5ab337adc92"
+  },
+  {
+    // _id: "ord4"
+    "estado": "cancelada",
+    "fecha": "2024-05-04",
+    "afiliado": {
+      "nombre": "Ana Gómez",
+      "fechaNacimiento": "1985-06-20",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "2345678901"},
+      "direccion": "Carrera 10 #20-30",
+      "telefono": "3102345678",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Psicología", "tipo": "Consulta", "descripcion": "Terapia psicológica"},
+    "medico": "68363c4fef8fb5ab337adc96"
+  },
+  {
+    // _id: "ord5"
+    "estado": "vigente",
+    "fecha": "2024-05-05",
+    "afiliado": {
+      "nombre": "Jorge Díaz",
+      "fechaNacimiento": "1975-09-10",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "5678901234"},
+      "direccion": "Calle 60 #70-80",
+      "telefono": "3135678901",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Consulta General", "tipo": "Consulta", "descripcion": "Revisión médica general"},
+    "medico": "68363c4fef8fb5ab337adc90"
+  },
+  {
+    // _id: "ord6"
+    "estado": "vigente",
+    "fecha": "2024-05-06",
+    "afiliado": {
+      "nombre": "Camila Ríos",
+      "fechaNacimiento": "1999-02-14",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "8901234567"},
+      "direccion": "Calle 90 #100-110",
+      "telefono": "3168901234",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Dermatología", "tipo": "Especializada", "descripcion": "Tratamiento de la piel"},
+    "medico": "68363c4fef8fb5ab337adc97"
+  },
+  {
+    // _id: "ord7"
+    "estado": "cancelada",
+    "fecha": "2024-05-07",
+    "afiliado": {
+      "nombre": "Paola Herrera",
+      "fechaNacimiento": "1995-12-01",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "0123456789"},
+      "direccion": "Diagonal 80 #50-60",
+      "telefono": "3180123456",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Cardiología", "tipo": "Especializada", "descripcion": "Tratamientos del corazón"},
+    "medico": "68363c4fef8fb5ab337adc94"
+  },
+  {
+    // _id: "ord8"
+    "estado": "vigente",
+    "fecha": "2024-05-08",
+    "afiliado": {
+      "nombre": "Diego Torres",
+      "fechaNacimiento": "1988-11-25",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "7890123456"},
+      "direccion": "Avenida 68 #40-50",
+      "telefono": "3157890123",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Ginecología", "tipo": "Especializada", "descripcion": "Salud reproductiva femenina"},
+    "medico": "68363c4fef8fb5ab337adc95"
+  },
+  {
+    // _id: "ord9"
+    "estado": "completada",
+    "fecha": "2024-05-09",
+    "afiliado": {
+      "nombre": "Marta Ruiz",
+      "fechaNacimiento": "1992-03-05",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "6789012345"},
+      "direccion": "Carrera 45 #22-33",
+      "telefono": "3146789012",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Oftalmología", "tipo": "Especializada", "descripcion": "Cuidado de la vista"},
+    "medico": "68363c4fef8fb5ab337adc98"
+  },
+  {
+    // _id: "ord10"
+    "estado": "vigente",
+    "fecha": "2024-05-10",
+    "afiliado": {
+      "nombre": "Juan Martínez",
+      "fechaNacimiento": "1980-07-30",
+      "identificacion": {"tipoDocumento": "CC", "numDocumento": "9012345678"},
+      "direccion": "Carrera 5 #6-7",
+      "telefono": "3179012345",
+      "tipoAfiliado": "Contribuyente"
+    },
+    "servicio": {"nombre": "Laboratorio Clínico", "tipo": "Diagnóstico", "descripcion": "Exámenes de sangre y orina"},
+    "medico": "68363c4fef8fb5ab337adc99"
+  }
+]
+//------------IPS-----------------
+[
+  {
+    // _id: "ips1"
+    "nombre": "Clínica Norte",
+    "direccion": "Carrera 45 #100-20",
+    "telefono": "3201234567",
+    "NIT": "900123456",
+    "servicios": ["68363a1fef8fb5ab337adc7c", "68363a1fef8fb5ab337adc7e"],
+    "medicos": ["68363c4fef8fb5ab337adc90", "68363c4fef8fb5ab337adc92"],
+    "ordenesServ": ["68363e1fef8fb5ab337adc9c", "68363e1fef8fb5ab337adc9e"]
+  },
+  {
+    // _id: "ips2"
+    "nombre": "Hospital Central",
+    "direccion": "Calle 80 #20-30",
+    "telefono": "3212345678",
+    "NIT": "900234567",
+    "servicios": ["68363a1fef8fb5ab337adc7d", "68363a1fef8fb5ab337adc7f", "68363a1fef8fb5ab337adc80"],
+    "medicos": ["68363c4fef8fb5ab337adc91", "68363c4fef8fb5ab337adc93", "68363c4fef8fb5ab337adc99"],
+    "ordenesServ": ["68363e1fef8fb5ab337adc9a", "68363e1fef8fb5ab337adc9b"]
+  },
+  {
+    // _id: "ips3"
+    "nombre": "Centro de Especialistas",
+    "direccion": "Av. Suba #130-10",
+    "telefono": "3223456789",
+    "NIT": "900345678",
+    "servicios": ["68363a1fef8fb5ab337adc81", "68363a1fef8fb5ab337adc82"],
+    "medicos": ["68363c4fef8fb5ab337adc94", "68363c4fef8fb5ab337adc98"],
+    "ordenesServ": ["68363e1fef8fb5ab337adca0", "68363e1fef8fb5ab337adca2"]
+  },
+  {
+    // _id: "ips4"
+    "nombre": "IPS Familiar",
+    "direccion": "Calle 50 #50-60",
+    "telefono": "3234567890",
+    "NIT": "900456789",
+    "servicios": ["68363a1fef8fb5ab337adc83"],
+    "medicos": ["68363c4fef8fb5ab337adc96"],
+    "ordenesServ": ["68363e1fef8fb5ab337adc9d"]
+  },
+  {
+    // _id: "ips5"
+    "nombre": "Salud Total",
+    "direccion": "Carrera 7 #20-10",
+    "telefono": "3245678901",
+    "NIT": "900567890",
+    "servicios": ["68363a1fef8fb5ab337adc84", "68363a1fef8fb5ab337adc85"],
+    "medicos": ["68363c4fef8fb5ab337adc95", "68363c4fef8fb5ab337adc97"],
+    "ordenesServ": ["68363e1fef8fb5ab337adc9f", "68363e1fef8fb5ab337adca1"]
+  },
+  {
+    // _id: "ips6"
+    "nombre": "Sanitas IPS",
+    "direccion": "Calle 100 #9-20",
+    "telefono": "3256789012",
+    "NIT": "900678901",
+    "servicios": ["68363a1fef8fb5ab337adc7c", "68363a1fef8fb5ab337adc7d"],
+    "medicos": ["68363c4fef8fb5ab337adc90", "68363c4fef8fb5ab337adc99"],
+    "ordenesServ": ["68363e1fef8fb5ab337adca3"]
+  },
+  {
+    // _id: "ips7"
+    "nombre": "Clinisalud",
+    "direccion": "Avenida 1 #2-3",
+    "telefono": "3267890123",
+    "NIT": "900789012",
+    "servicios": ["srv668363a1fef8fb5ab337adc81", "68363a1fef8fb5ab337adc84"],
+    "medicos": ["68363c4fef8fb5ab337adc95", "68363c4fef8fb5ab337adc98"],
+    "ordenesServ": []
+  },
+  {
+    // _id: "ips8"
+    "nombre": "Vida IPS",
+    "direccion": "Calle 120 #30-40",
+    "telefono": "3278901234",
+    "NIT": "900890123",
+    "servicios": ["68363a1fef8fb5ab337adc80", "68363a1fef8fb5ab337adc83"],
+    "medicos": ["68363c4fef8fb5ab337adc93", "68363c4fef8fb5ab337adc96"],
+    "ordenesServ": []
+  },
+  {
+    // _id: "ips9"
+    "nombre": "NovaSalud",
+    "direccion": "Transv 93 #45-12",
+    "telefono": "3289012345",
+    "NIT": "900901234",
+    "servicios": ["68363a1fef8fb5ab337adc7f", "68363a1fef8fb5ab337adc82"],
+    "medicos": ["68363c4fef8fb5ab337adc91", "68363c4fef8fb5ab337adc94"],
+    "ordenesServ": []
+  },
+  {
+    // _id: "ips10"
+    "nombre": "Vida Sana",
+    "direccion": "Carrera 9 #90-100",
+    "telefono": "3290123456",
+    "NIT": "900012345",
+    "servicios": ["68363a1fef8fb5ab337adc7e", "68363a1fef8fb5ab337adc85"],
+    "medicos": ["68363c4fef8fb5ab337adc92", "68363c4fef8fb5ab337adc97"],
+    "ordenesServ": []
+  }
+]
+//---------------------Cita-------------------
+[
+  {
+    fecha: new Date("2024-06-01T10:00:00Z"),
+    servicio: {
+      nombre: "Consulta General",
+      tipo: "Consulta",
+      descripcion: "Revisión médica general"
+    },
+    agendada: true,
+    afiliado: {
+      nombre: "Luis Pérez",
+      fechaNacimiento: "1990-04-12",
+      identificacion: { tipoDocumento: "CC", numDocumento: "1234567890" },
+      direccion: "Calle 123 #45-67",
+      telefono: "3001234567",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc90",
+    ips: "68364825ef8fb5ab337adca4",
+    ordenAsociada: "68363e1fef8fb5ab337adc9e"
+  },
+  {
+    fecha: new Date("2024-06-02T11:00:00Z"),
+    servicio: {
+      nombre: "Odontología",
+      tipo: "Especializada",
+      descripcion: "Tratamientos dentales"
+    },
+    agendada: true,
+    afiliado: {
+      nombre: "Laura Méndez",
+      fechaNacimiento: "2010-08-15",
+      identificacion: { tipoDocumento: "TI", numDocumento: "4567890123" },
+      direccion: "Transversal 30 #15-40",
+      telefono: "3124567890",
+      tipoAfiliado: "Beneficiario",
+      contribuyente: "68363a9bef8fb5ab337adc87",
+      parentesco: "Hija"
+    },
+    medico: "68363c4fef8fb5ab337adc93",
+    ips: "68364825ef8fb5ab337adca5",
+    ordenAsociada: "68363e1fef8fb5ab337adc9b"
+  },
+  {
+    fecha: new Date("2024-06-03T10:30:00Z"),
+    servicio: {
+      nombre: "Radiología",
+      tipo: "Diagnóstico",
+      descripcion: "Rayos X y resonancias"
+    },
+    agendada: false,
+    afiliado: {
+      nombre: "Carlos López",
+      fechaNacimiento: "2000-01-01",
+      identificacion: { tipoDocumento: "CC", numDocumento: "3456789012" },
+      direccion: "Diagonal 45 #33-20",
+      telefono: "3113456789",
+      tipoAfiliado: "Beneficiario",
+      contribuyente: "68363a9bef8fb5ab337adc86",
+      parentesco: "Hijo"
+    },
+    medico: "68363c4fef8fb5ab337adc92",
+    ips: "68364825ef8fb5ab337adca4",
+    ordenAsociada: "68363e1fef8fb5ab337adc9a"
+  },
+  {
+    fecha: new Date("2024-06-04T09:00:00Z"),
+    servicio: {
+      nombre: "Psicología",
+      tipo: "Consulta",
+      descripcion: "Terapia psicológica"
+    },
+    agendada: true,
+    afiliado: {
+      nombre: "Ana Gómez",
+      fechaNacimiento: "1985-06-20",
+      identificacion: { tipoDocumento: "CC", numDocumento: "2345678901" },
+      direccion: "Carrera 10 #20-30",
+      telefono: "3102345678",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc96",
+    ips: "68364825ef8fb5ab337adca7",
+    ordenAsociada: "68363e1fef8fb5ab337adc9d"
+  },
+  {
+    fecha: new Date("2024-06-05T12:15:00Z"),
+    servicio: {
+      nombre: "Cardiología",
+      tipo: "Especializada",
+      descripcion: "Tratamientos del corazón"
+    },
+    agendada: false,
+    afiliado: {
+      nombre: "Paola Herrera",
+      fechaNacimiento: "1995-12-01",
+      identificacion: { tipoDocumento: "CC", numDocumento: "0123456789" },
+      direccion: "Diagonal 80 #50-60",
+      telefono: "3180123456",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc94",
+    ips: "68364825ef8fb5ab337adca6",
+    ordenAsociada: "68363e1fef8fb5ab337adca0"
+  },
+  {
+    fecha: new Date("2024-06-06T14:00:00Z"),
+    servicio: {
+      nombre: "Dermatología",
+      tipo: "Especializada",
+      descripcion: "Tratamiento de la piel"
+    },
+    agendada: true,
+    afiliado: {
+      nombre: "Camila Ríos",
+      fechaNacimiento: "1999-02-14",
+      identificacion: { tipoDocumento: "CC", numDocumento: "8901234567" },
+      direccion: "Calle 90 #100-110",
+      telefono: "3168901234",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc98",
+    ips: "68364825ef8fb5ab337adca8",
+    ordenAsociada: "68363e1fef8fb5ab337adc9f"
+  },
+  {
+    fecha: new Date("2024-06-07T08:30:00Z"),
+    servicio: {
+      nombre: "Oftalmología",
+      tipo: "Especializada",
+      descripcion: "Cuidado de la vista"
+    },
+    agendada: false,
+    afiliado: {
+      nombre: "Marta Ruiz",
+      fechaNacimiento: "1992-03-05",
+      identificacion: { tipoDocumento: "CC", numDocumento: "6789012345" },
+      direccion: "Carrera 45 #22-33",
+      telefono: "3146789012",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc98",
+    ips: "68364825ef8fb5ab337adca6",
+    ordenAsociada: "68363e1fef8fb5ab337adca2"
+  },
+  {
+    fecha: new Date("2024-06-08T16:00:00Z"),
+    servicio: {
+      nombre: "Ginecología",
+      tipo: "Especializada",
+      descripcion: "Salud reproductiva femenina"
+    },
+    agendada: true,
+    afiliado: {
+      nombre: "Diego Torres",
+      fechaNacimiento: "1988-11-25",
+      identificacion: { tipoDocumento: "CC", numDocumento: "7890123456" },
+      direccion: "Avenida 68 #40-50",
+      telefono: "3157890123",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc95",
+    ips: "68364825ef8fb5ab337adca8",
+    ordenAsociada: "68363e1fef8fb5ab337adca1"
+  },
+  {
+    fecha: new Date("2024-06-09T10:45:00Z"),
+    servicio: {
+      nombre: "Pediatría",
+      tipo: "Consulta",
+      descripcion: "Atención médica infantil"
+    },
+    agendada: false,
+    afiliado: {
+      nombre: "Carlos López",
+      fechaNacimiento: "2000-01-01",
+      identificacion: { tipoDocumento: "CC", numDocumento: "3456789012" },
+      direccion: "Diagonal 45 #33-20",
+      telefono: "3113456789",
+      tipoAfiliado: "Beneficiario",
+      contribuyente: "68363a9bef8fb5ab337adc86",
+      parentesco: "Hijo"
+    },
+    medico: "68363c4fef8fb5ab337adc91",
+    ips: "68364825ef8fb5ab337adca5",
+    ordenAsociada: "68363e1fef8fb5ab337adc9a"
+  },
+  {
+    fecha: new Date("2024-06-10T13:20:00Z"),
+    servicio: {
+      nombre: "Laboratorio Clínico",
+      tipo: "Diagnóstico",
+      descripcion: "Exámenes de sangre y orina"
+    },
+    agendada: true,
+    afiliado: {
+      nombre: "Juan Martínez",
+      fechaNacimiento: "1980-07-30",
+      identificacion: { tipoDocumento: "CC", numDocumento: "9012345678" },
+      direccion: "Carrera 5 #6-7",
+      telefono: "3179012345",
+      tipoAfiliado: "Contribuyente"
+    },
+    medico: "68363c4fef8fb5ab337adc99",
+    ips: "68364825ef8fb5ab337adca9",
+    ordenAsociada: "68363e1fef8fb5ab337adca3"
+  }
+]
+
+
+//----------------EPS----------------
+[
+  {
+    // _id: "eps1"
+    "nombre": "SaludVida",
+    "direccion": "Av. 68 #20-50",
+    "telefono": "3256789012",
+    "IPSList": ["68364825ef8fb5ab337adca4", "68364825ef8fb5ab337adca5"],
+    "afiliados": ["68363a9bef8fb5ab337adc86", "68363a9bef8fb5ab337adc87", "68363b14ef8fb5ab337adc88", "68363b14ef8fb5ab337adc89"],
+    "citas": ["68364d62ef8fb5ab337adccc", "68364d62ef8fb5ab337adccd", "68364d62ef8fb5ab337adcce"]
+  },
+  {
+    // _id: "eps2"
+    "nombre": "Compensar",
+    "direccion": "Calle 26 #69-76",
+    "telefono": "3267890123",
+    "IPSList": ["68364825ef8fb5ab337adca6", "68364825ef8fb5ab337adca7"],
+    "afiliados": ["68363b14ef8fb5ab337adc8a", "68363b14ef8fb5ab337adc8b"],
+    "citas": ["68364d62ef8fb5ab337adccf", "68364d62ef8fb5ab337adcd0"]
+  },
+  {
+    // _id: "eps3"
+    "nombre": "Nueva EPS",
+    "direccion": "Carrera 10 #15-30",
+    "telefono": "3278901234",
+    "IPSList": ["68364825ef8fb5ab337adca8", "68364825ef8fb5ab337adca9"],
+    "afiliados": ["68363b14ef8fb5ab337adc8c"],
+    "citas": ["68364d62ef8fb5ab337adcd1", "68364d62ef8fb5ab337adcd2"]
+  },
+  {
+    // _id: "eps4"
+    "nombre": "Famisanar",
+    "direccion": "Calle 72 #13-23",
+    "telefono": "3289012345",
+    "IPSList": ["68364825ef8fb5ab337adcaa"],
+    "afiliados": ["68363b14ef8fb5ab337adc8d"],
+    "citas": ["68364d62ef8fb5ab337adcd3"]
+  },
+  {
+    // _id: "eps5"
+    "nombre": "Sura EPS",
+    "direccion": "Carrera 45 #100-10",
+    "telefono": "3290123456",
+    "IPSList": ["68364825ef8fb5ab337adcab"],
+    "afiliados": ["68363b14ef8fb5ab337adc8e"],
+    "citas": ["68364d62ef8fb5ab337adcd4"]
+  },
+  {
+    // _id: "eps6"
+    "nombre": "Coomeva EPS",
+    "direccion": "Av. Américas #50-20",
+    "telefono": "3301234567",
+    "IPSList": ["68364825ef8fb5ab337adcac"],
+    "afiliados": ["68363b14ef8fb5ab337adc8f"],
+    "citas": ["68364d62ef8fb5ab337adcd5"]
+  },
+  {
+    // _id: "eps7"
+    "nombre": "Medimás",
+    "direccion": "Transv. 93 #45-12",
+    "telefono": "3312345678",
+    "IPSList": ["68364825ef8fb5ab337adcad"],
+    "afiliados": ["68363a9bef8fb5ab337adc86", "68363b14ef8fb5ab337adc8a"],
+    "citas": []
+  },
+  {
+    // _id: "eps8"
+    "nombre": "Salud Total",
+    "direccion": "Calle 80 #20-10",
+    "telefono": "3323456789",
+    "IPSList": ["68364825ef8fb5ab337adca5", "68364825ef8fb5ab337adca6"],
+    "afiliados": ["68363b14ef8fb5ab337adc8b", "68363b14ef8fb5ab337adc8c"],
+    "citas": []
+  },
+  {
+    // _id: "eps9"
+    "nombre": "Aliansalud",
+    "direccion": "Cra 7 #120-45",
+    "telefono": "3334567890",
+    "IPSList": ["68364825ef8fb5ab337adca7", "68364825ef8fb5ab337adca8"],
+    "afiliados": ["68363b14ef8fb5ab337adc8d", "68363b14ef8fb5ab337adc8e"],
+    "citas": []
+  },
+  {
+    // _id: "eps10"
+    "nombre": "Sanitas",
+    "direccion": "Av. El Dorado #90-30",
+    "telefono": "3345678901",
+    "IPSList": ["68364825ef8fb5ab337adca9", "68364825ef8fb5ab337adcaa"],
+    "afiliados": ["68363b14ef8fb5ab337adc8f", "68363b14ef8fb5ab337adc88"],
+    "citas": []
+  }
+]
