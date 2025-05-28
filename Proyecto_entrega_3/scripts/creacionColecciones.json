@@ -8,9 +8,9 @@ db.createCollection("EPS",{
                 nombre:{bsonType:"string"},
                 direccion:{bsonType:"string"},
                 telefono:{bsonType:"string",minLength:10},
-                IPSList:{bsonType:"array",items:{bsonType:"string"}},
-                afiliados:{bsonType:"array",items:{bsonType:"string"}},
-                citas:{bsonType:"array",items:{bsonType:"string"}}
+                IPSList:{bsonType:"array",items:{bsonType:"string"}}, //Lista con ids de las IPS como referencia
+                afiliados:{bsonType:"array",items:{bsonType:"string"}}, //Lista con ids de los afiliados como referencia
+                citas:{bsonType:"array",items:{bsonType:"string"}} //Lista con ids de las citas como referencia
             }
         }
     }
@@ -46,12 +46,12 @@ db.createCollection("Cita",{
                             direccion:{bsonType:"string"},
                             telefono:{bsonType:"string",minLength:10},
                             tipoAfiliado:{bsonType:"string"},
-                            contribuyente:{bsonType:"string"},
+                            contribuyente:{bsonType:"string"}, //id del afiliado contribuyente como referencia
                             parentesco:{bsonType:"string"}
                           }},
-                medico:{bsonType:"string"},
-                ips:{bsonType:"string"},
-                ordenAsociada:{bsonType:"string"}
+                medico:{bsonType:"string"}, //id del medico asociado a la Cita
+                ips:{bsonType:"string"}, //id de la IPS asociada a la cita
+                ordenAsociada:{bsonType:"string"} //id de la ordenServicio a la Cita
             }
         }
     }
@@ -74,8 +74,8 @@ db.createCollection("Afiliado",{
                                 }},
                 direccion:{bsonType:"string"},
                 telefono:{bsonType:"string",minLength:10},
-                tipoAfiliado:{bsonType:"string"},
-                contribuyente:{bsonType:"string"},
+                tipoAfiliado:{bsonType:"string"}, 
+                contribuyente:{bsonType:"string"},//id del afiliado contribuyente como referencia
                 parentesco:{bsonType:"string"}
 
             }
@@ -115,7 +115,7 @@ db.createCollection("Medico",{
                 especialidad:{bsonType:"string"},
                 registroMedico:{bsonType:"string"},
                 servicios:{bsonType:"array",
-                           items:{bsonType:"string"}}
+                           items:{bsonType:"string"}} //Lista de ids de los servicios que presta el medico
             }
         }
     }
@@ -131,9 +131,9 @@ db.createCollection("IPS",{
                 direccion:{bsonType:"string"},
                 telefono:{bsonType:"string",minLength:10},
                 NIT:{bsonType:"string",minLength:9},
-                servicios:{bsonType:"array",items:{bsonType:"string"}},
-                medicos:{bsonType:"array",items:{bsonType:"string"}},
-                ordenesServ:{bsonType:"array",items:{bsonType:"string"}}
+                servicios:{bsonType:"array",items:{bsonType:"string"}}, //Lista con los ids de los servicios que presta la IPS
+                medicos:{bsonType:"array",items:{bsonType:"string"}}, //Lista con los ids de los medicos que trabajan para la IPS
+                ordenesServ:{bsonType:"array",items:{bsonType:"string"}} //Lista con las ordenesServicio relacionadas a los servicios de la IPS
             }
         }
     }
@@ -162,7 +162,7 @@ db.createCollection("OrdenServicio",{
                             direccion:{bsonType:"string"},
                             telefono:{bsonType:"string",minLength:10},
                             tipoAfiliado:{bsonType:"string"},
-                            contribuyente:{bsonType:"string"},
+                            contribuyente:{bsonType:"string"}, //id del afiliado contribuyente como referencia
                             parentesco:{bsonType:"string"}
                           }},
                 servicio:{bsonType:"object",
@@ -172,7 +172,7 @@ db.createCollection("OrdenServicio",{
                             tipo:{bsonType:"string"},
                             descripcion:{bsonType:"string"}
                           }},
-                medico:{bsonType:"string"}
+                medico:{bsonType:"string"} //id del medico asociado a la OrdenServicio
             }
         }
     }

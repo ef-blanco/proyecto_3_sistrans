@@ -3,7 +3,7 @@ package uniandes.edu.co.demo.modelo;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "ordenesServicio")
+@Document(collection = "OrdenServicio")
 public class OrdenServicio {
 
     @Id
@@ -15,13 +15,10 @@ public class OrdenServicio {
     private Afiliado afiliado;
     private Servicio servicio;
 
-    private int medico;
-
-    // Constructor vacío
-    public OrdenServicio() {}
+    private String medico;
 
     // Constructor con parámetros (opcional)
-    public OrdenServicio(String estado, String fecha, Afiliado afiliado, Servicio servicio, int medico) {
+    public OrdenServicio(String estado, String fecha, Afiliado afiliado, Servicio servicio, String medico) {
         this.estado = estado;
         this.fecha = fecha;
         this.afiliado = afiliado;
@@ -64,10 +61,10 @@ public class OrdenServicio {
         this.servicio = servicio;
     }
 
-    public int getMedico() {
+    public String getMedico() {
         return medico;
     }
-    public void setMedico(int medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
 }

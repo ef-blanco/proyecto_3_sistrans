@@ -49,19 +49,19 @@ public class OrdenServicioController {
     }
 
     // UPDATE - Actualizar orden
-    @PutMapping("/{id}/edit/save")
+    @PostMapping("/{id}/edit/save")
     public ResponseEntity<String> actualizarOrdenServicio(@PathVariable("id") String id,
             @RequestBody OrdenServicio ordenServicio) {
-        if (!ordenServicioRepository.existsById(id)) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("OrdenServicio no encontrada");
-        }
-        try {
-            ordenServicio.setId(id);
-            ordenServicioRepository.save(ordenServicio);
-            return ResponseEntity.ok("OrdenServicio actualizada exitosamente");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al actualizar la ordenServicio: " + e.getMessage());
+        try{
+            ordenServicioRepository.actualizarOrdenServicio(id,
+            ordenServicio.getEstado(),
+            ordenServicio.getFecha(),
+            ordenServicio.getAfiliado(),
+            ordenServicio.getServicio(),
+            ordenServicio.getMedico());
+            return new ResponseEntity<>("Orden de servicio actualizado exitosamente",HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>("Error al actualizar el orden de servicio: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
