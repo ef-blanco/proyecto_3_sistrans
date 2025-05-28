@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "48deeee1-2ac5-4b0e-8400-ad462cb240c0",
+		"_postman_id": "478dda30-f4dd-456e-8257-09f4bc21fcfc",
 		"name": "Cita",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41906296",
-		"_collection_link": "https://sintrans-group.postman.co/workspace/Proyecto-3-sistrans~db9d9c6b-8f1e-4aef-a457-2f530b65d2c2/collection/41906296-48deeee1-2ac5-4b0e-8400-ad462cb240c0?action=share&source=collection_link&creator=41906296"
+		"_exporter_id": "41409337"
 	},
 	"item": [
 		{
@@ -178,7 +177,17 @@
 			"name": "RFC2 - Obtener Top 20 Servicios",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/citas/top-servicios",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"citas",
+						"top-servicios"
+					]
+				}
 			},
 			"response": []
 		}
