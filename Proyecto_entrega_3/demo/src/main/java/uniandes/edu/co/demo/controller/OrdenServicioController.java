@@ -49,7 +49,7 @@ public class OrdenServicioController {
     }
 
     // UPDATE - Actualizar orden
-    @PutMapping("/{id}/edit/save")
+    @PostMapping("/{id}/edit/save")
     public ResponseEntity<String> actualizarOrdenServicio(@PathVariable("id") String id,
             @RequestBody OrdenServicio ordenServicio) {
         try{
