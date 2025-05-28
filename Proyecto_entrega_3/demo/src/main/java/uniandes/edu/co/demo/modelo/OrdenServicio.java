@@ -3,7 +3,7 @@ package uniandes.edu.co.demo.modelo;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "ordenesServicio")
+@Document(collection = "OrdenServicio")
 public class OrdenServicio {
 
     @Id
